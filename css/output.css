@@ -1,0 +1,97 @@
+@charset "UTF-8";
+a {
+  color: orange;
+  text-decoration: none;
+}
+
+a img {
+  border: none 0px white;
+}
+
+a:hover,
+a:focus {
+  color: #3397db;
+  text-decoration: none;
+}
+
+.filter-options {
+  height: 50px;
+  background-color: #3397db;
+  align-items: center;
+}
+
+.filter-options h2 {
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0 20px;
+}
+
+.filter-options select {
+  background-color: white;
+  border: 1px solid white;
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  height: 35px;
+  letter-spacing: 0;
+  margin: 10px;
+  padding: 0 10px;
+}
+
+.reviews__list {
+  margin: 0;
+  padding: 0;
+}
+
+.reviews__list li {
+  background-color: white;
+  border: 2px solid #f3f3f3;
+  list-style-type: none;
+  margin: 0 0 30px;
+  overflow: hidden;
+  padding: 0 20px 20px;
+  position: relative;
+}
+
+.reviews__list li p {
+  margin: 0 0 10px;
+}
+
+.container__reviews h2 {
+  color: #f58500;
+  font-size: 24pt;
+  font-weight: 300;
+  letter-spacing: -1px;
+  padding-bottom: 1pt;
+}
+
+.breadcrumb {
+  background-color: #eee;
+  font-size: 17px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 40px 16px;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/ ";
+}
+
+/*# sourceMappingURL=output.css.map */
