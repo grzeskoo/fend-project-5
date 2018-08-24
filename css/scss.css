@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.container, .container__info, .container__restaurant {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
 a {
   color: orange;
   text-decoration: none;
@@ -17,23 +27,22 @@ body,
 td,
 th,
 p {
+  color: #333;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10pt;
-  color: #333;
   line-height: 1.5;
 }
 
 body {
   background-color: #fdfdfd;
   margin: 0;
-  position: relative;
 }
 
 ul,
 li {
+  color: #333;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10pt;
-  color: #333;
 }
 
 h1,
@@ -59,13 +68,6 @@ h6 {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-height: 100%;
 }
 
@@ -87,26 +89,9 @@ h6 {
 }
 
 .container__info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-
-.container__restaurant {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .container__restaurant img {
@@ -153,14 +138,16 @@ h6 {
           flex: 2;
 }
 
-.container__map.restaurants .map {
-  height: 100%;
+.container__map .map {
   width: 100%;
 }
 
-.container__map.home .map {
+.container__map .map .container__map {
+  height: 100%;
+}
+
+.container__map.home .container__map .map {
   height: 400px;
-  width: 100%;
 }
 
 .filter {
@@ -209,12 +196,12 @@ h6 {
   display: flex;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
-  list-style: outside none none;
-  margin: 0;
-  padding: 0px;
-  text-align: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  list-style: outside none none;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
 }
 
 .restaurants-list img {
@@ -232,14 +219,17 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 15%;
+          flex: 1 0 15%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: Arial, sans-serif;
   text-align: left;
+  margin: 10px;
+  padding: 10px;
 }
 
 .restaurants-list li a {
@@ -275,10 +265,6 @@ h6 {
   list-style-type: none;
   margin: 0 0 30px;
   padding: 0 20px 20px;
-}
-
-.reviews__list li p {
-  margin: 0 0 10px;
 }
 
 .container__reviews h2 {
