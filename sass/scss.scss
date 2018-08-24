@@ -1,3 +1,4 @@
+@charset "utf-8";
 /////////////////////////////////////////////////////////
 // Global styles
 /////////////////////////////////////////////////////////
@@ -52,6 +53,18 @@ h6 {
 /////////////////////////////////////////////////////////
 // Containers
 /////////////////////////////////////////////////////////
+.title__text {
+  font-size: 14pt;
+  font-weight: 200;
+  letter-spacing: 10px;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+.title__text a {
+  color: #fff;
+}
+
 .container {
   display       : flex;
   flex-direction: column;
@@ -63,7 +76,7 @@ h6 {
   background-color: #252831;
   display         : flex;
   height          : 80px;
-  width           : 100%;
+  // width           : 100%;
 }
 
 .container__main {
@@ -73,7 +86,8 @@ h6 {
 .container__info {
   display       : flex;
   flex-direction: column;
-  // flex: 1;
+  flex: 1;
+  // width: 50%;
 }
 
 .container__restaurant {
@@ -83,24 +97,70 @@ h6 {
   img {
     max-width: 100%;
   }
+
+  .name {
+    color         : #f18200;
+    font-family   : Arial, sans-serif;
+    font-size     : 20pt;
+    font-weight   : 200;
+    letter-spacing: 0;
+    // margin        : 15px 0 30px;
+    text-transform: uppercase;
+    line-height   : 1.1;
+  }
+
+  .cuisine {
+    background-color: #333;
+    color           : #ddd;
+    font-size       : 12pt;
+    font-weight     : 300;
+    letter-spacing  : 10px;
+    text-align      : center;
+    text-transform  : uppercase;
+  }
+
+  .address {
+    font-size: 12pt;
+    margin   : 10px 0px;
+  }
+
+  .hours {
+    border-collapse: collapse;
+    border-spacing : 0;
+    // width: 50%;
+
+    tr {
+      // max-width: 100%;
+    }
+
+    td {
+      color: #666;
+    }
+  }
 }
 
 .container__map {
-  // flex: 1;
   // height: 400px; // max-height: 100%
+  flex: 1;
+
+  // width: 50%;
 
   &.restaurants {
-    background: blue none repeat scroll 0 0;
+    // background: blue none repeat scroll 0 0;
     // height: 87%;
     // position: fixed;
     // right: 0;
     // top: 80px;
-    width: 50%;
+    // width: 100%;
+
+    // border: 5px solid red;
 
     & .map {
       background-color: #ccc;
       height          : 100%;
       width           : 100%;
+
+      // border: 5px solid green;
     }
   }
 
@@ -234,37 +294,6 @@ h6 {
   }
 }
 
-.container__restaurant {
-  .name {
-    color         : #f18200;
-    font-family   : Arial, sans-serif;
-    font-size     : 20pt;
-    font-weight   : 200;
-    letter-spacing: 0;
-    margin        : 15px 0 30px;
-    text-transform: uppercase;
-    line-height   : 1.1;
-  }
-
-  .cuisine {
-    background-color: #333;
-    color           : #ddd;
-    font-size       : 12pt;
-    font-weight     : 300;
-    letter-spacing  : 10px;
-    text-align      : center;
-    text-transform  : uppercase;
-  }
-
-  .address {
-    font-size: 12pt;
-    margin   : 10px 0px;
-  }
-
-  .hours td {
-    color: #666;
-  }
-}
 
 .container__reviews {
   h2 {
@@ -282,7 +311,7 @@ h6 {
   font-size       : 17px;
   list-style      : none;
   margin          : 0;
-  padding         : 10px 40px 16px;
+  // padding         : 10px 40px 16px;
 
   li {
     display: inline;
@@ -304,3 +333,19 @@ h6 {
     content: "/ ";
   }
 }
+
+
+#footer {
+  background-color: #444;
+  color           : #aaa;
+  font-size       : 8pt;
+  letter-spacing  : 1px;
+  padding         : 25px;
+  text-align      : center;
+  text-transform  : uppercase;
+}
+
+// @media screen and (max-width: 768px) {
+//   .main__container {
+//   }
+// }

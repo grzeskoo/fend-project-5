@@ -46,6 +46,18 @@ h6 {
   margin: 0 0 20px;
 }
 
+.title__text {
+  font-size: 14pt;
+  font-weight: 200;
+  letter-spacing: 10px;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+.title__text a {
+  color: #fff;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,7 +78,6 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   height: 80px;
-  width: 100%;
 }
 
 .container__main {
@@ -83,6 +94,9 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .container__restaurant {
@@ -99,9 +113,44 @@ h6 {
   max-width: 100%;
 }
 
-.container__map.restaurants {
-  background: blue none repeat scroll 0 0;
-  width: 50%;
+.container__restaurant .name {
+  color: #f18200;
+  font-family: Arial, sans-serif;
+  font-size: 20pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.container__restaurant .cuisine {
+  background-color: #333;
+  color: #ddd;
+  font-size: 12pt;
+  font-weight: 300;
+  letter-spacing: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container__restaurant .address {
+  font-size: 12pt;
+  margin: 10px 0px;
+}
+
+.container__restaurant .hours {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container__restaurant .hours td {
+  color: #666;
+}
+
+.container__map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .container__map.restaurants .map {
@@ -233,36 +282,6 @@ h6 {
   margin: 0 0 10px;
 }
 
-.container__restaurant .name {
-  color: #f18200;
-  font-family: Arial, sans-serif;
-  font-size: 20pt;
-  font-weight: 200;
-  letter-spacing: 0;
-  margin: 15px 0 30px;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
-
-.container__restaurant .cuisine {
-  background-color: #333;
-  color: #ddd;
-  font-size: 12pt;
-  font-weight: 300;
-  letter-spacing: 10px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.container__restaurant .address {
-  font-size: 12pt;
-  margin: 10px 0px;
-}
-
-.container__restaurant .hours td {
-  color: #666;
-}
-
 .container__reviews h2 {
   color: #f58500;
   font-size: 24pt;
@@ -276,7 +295,6 @@ h6 {
   font-size: 17px;
   list-style: none;
   margin: 0;
-  padding: 10px 40px 16px;
 }
 
 .breadcrumb li {
@@ -297,5 +315,15 @@ h6 {
   padding: 8px;
   color: black;
   content: "/ ";
+}
+
+#footer {
+  background-color: #444;
+  color: #aaa;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=scss.css.map */
