@@ -1,3 +1,5 @@
+
+
 @charset "utf-8";
 /////////////////////////////////////////////////////////
 // Global styles
@@ -21,9 +23,9 @@ body,
 td,
 th,
 p {
+  color      : #333;
   font-family: Arial, Helvetica, sans-serif;
   font-size  : 10pt;
-  color      : #333;
   line-height: 1.5;
 }
 
@@ -35,9 +37,9 @@ body {
 
 ul,
 li {
+  color      : #333;
   font-family: Arial, Helvetica, sans-serif;
   font-size  : 10pt;
-  color      : #333;
 }
 
 h1,
@@ -87,7 +89,6 @@ h6 {
   display       : flex;
   flex-direction: column;
   flex: 1;
-  // width: 50%;
 }
 
 .container__restaurant {
@@ -127,11 +128,6 @@ h6 {
   .hours {
     border-collapse: collapse;
     border-spacing : 0;
-    // width: 50%;
-
-    tr {
-      // max-width: 100%;
-    }
 
     td {
       color: #666;
@@ -140,35 +136,34 @@ h6 {
 }
 
 .container__map {
-  // height: 400px; // max-height: 100%
-  flex: 1;
+  flex: 2;
 
-  // width: 50%;
+  // &.restaurants {
+  //   & .map {
+  //     height: 100%;
+  //     width : 100%;
+  //   }
+  // }
+
+  // &.home {
+  //   & .map {
+  //     height: 400px;
+  //     width : 100%;
+  //   }
+  // }
+
+  .map {
+    width: 100%;
+  }
 
   &.restaurants {
-    // background: blue none repeat scroll 0 0;
-    // height: 87%;
-    // position: fixed;
-    // right: 0;
-    // top: 80px;
-    // width: 100%;
-
-    // border: 5px solid red;
-
-    & .map {
-      background-color: #ccc;
-      height          : 100%;
-      width           : 100%;
-
-      // border: 5px solid green;
-    }
+    @extend .map;
+    height: 100%;
   }
 
   &.home {
-    & .map {
-      height: 400px;
-      width : 100%;
-    }
+    @extend .map;
+    height: 400px;
   }
 }
 
@@ -187,6 +182,7 @@ h6 {
   }
 }
 
+// Filters styles
 .filter-options {
   height          : 50px;
   background-color: #3397db;
@@ -219,11 +215,11 @@ h6 {
   background-color: #f3f3f3;
   display         : flex;
   flex-flow       : wrap;
+  justify-content : space-around;
   list-style      : outside none none;
   margin          : 0;
   padding         : 0px;
   text-align      : center;
-  justify-content : space-around;
 
   img {
     max-width: 100%;
@@ -241,13 +237,12 @@ h6 {
     flex-basis      : 20%;
     flex-direction  : column;
     font-family     : Arial, sans-serif;
+    text-align: left;
     // margin: 10px;
     // padding: 10px;
-    text-align: left;
 
     a {
       background-color: orange;
-      // border-bottom: 3px solid #eee;
       color          : #fff;
       font-size      : 10pt;
       margin         : 15px 0 0;
@@ -255,6 +250,7 @@ h6 {
       text-align     : center;
       text-decoration: none;
       text-transform : uppercase;
+      // border-bottom: 3px solid #eee;
     }
 
     h1 {
@@ -345,7 +341,10 @@ h6 {
   text-transform  : uppercase;
 }
 
-// @media screen and (max-width: 768px) {
-//   .main__container {
-//   }
-// }
+
+
+@media screen and (max-width: 768px) {
+  .container__main {
+    flex-direction: column;
+  }
+}
