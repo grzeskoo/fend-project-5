@@ -1,4 +1,6 @@
-// Main
+/////////////////////////////////////////////////////////
+// Global styles
+/////////////////////////////////////////////////////////
 a {
   color          : orange;
   text-decoration: none;
@@ -47,7 +49,9 @@ h6 {
   margin     : 0 0 20px;
 }
 
-// Grid
+/////////////////////////////////////////////////////////
+// Containers
+/////////////////////////////////////////////////////////
 .container {
   display       : flex;
   flex-direction: column;
@@ -93,7 +97,7 @@ h6 {
     // top: 80px;
     width: 50%;
 
-    & .map__map {
+    & .map {
       background-color: #ccc;
       height          : 100%;
       width           : 100%;
@@ -101,14 +105,20 @@ h6 {
   }
 
   &.home {
-    & .map__map {
+    & .map {
       height: 400px;
       width : 100%;
     }
   }
 }
 
-// Filter
+
+
+// --------------------------------------------------------
+// index.html
+// --------------------------------------------------------
+// [Filters]
+// Select-lists below map to filter results
 .filter {
   display: flex;
 
@@ -143,7 +153,8 @@ h6 {
   }
 }
 
-// Restaurant List
+// [Restaurants]
+// List of restaurants below map; controls wrapping.
 .restaurants-list {
   background-color: #f3f3f3;
   display         : flex;
@@ -199,7 +210,13 @@ h6 {
   }
 }
 
-// Restaurant Info
+
+
+// --------------------------------------------------------
+// restaurant.html
+// --------------------------------------------------------
+// [Reviews]
+//
 .reviews__list {
   margin : 0;
   padding: 0;

@@ -104,13 +104,13 @@ h6 {
   width: 50%;
 }
 
-.container__map.restaurants .map__map {
+.container__map.restaurants .map {
   background-color: #ccc;
   height: 100%;
   width: 100%;
 }
 
-.container__map.home .map__map {
+.container__map.home .map {
   height: 400px;
   width: 100%;
 }
