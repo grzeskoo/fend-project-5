@@ -1,0 +1,227 @@
+// --------------------------------------------------------
+// Sass
+// --------------------------------------------------------
+// [Import]
+@import "_colors.scss";
+@import "_normalize.scss";
+@import "_styles.scss";
+
+// [Extends]
+// Re-usable styles
+%flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+%flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+// [Mixins]
+// Not sure if I'm doing this right
+// @mixin flex-col {
+//   display: flex;
+//   flex-flow: column nowrap;
+// }
+
+// @mixin flex-row {
+//   display: flex;
+//   flex-flow: row nowrap;
+// }
+
+@mixin flex ($flow) {
+  display: flex;
+
+  @if $flow == "col" {
+    flex-flow: column nowrap;
+    border: 2px solid red;
+  }
+  @else if $flow == "row" {
+    flex-flow: row nowrap;
+  }
+}
+
+// --------------------------------------------------------
+// Global
+// --------------------------------------------------------
+// [Reset]
+// Normalize styles to simple baseline
+
+
+
+// --------------------------------------------------------
+// Containers
+// --------------------------------------------------------
+// [Main]
+// Wrapper for entire page
+.body {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.container__header {
+  border: 5px solid mediumseagreen;
+}
+
+.container__content {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 5px solid violet;
+
+}
+
+.container__breadcrumb {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 5px solid red;
+}
+
+.container__info {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 5px solid yellowgreen;
+}
+
+.container__map {
+  border: 5px solid orange;
+
+  .map {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.container__filter {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 5px solid deeppink;
+
+  & > select {
+    flex-basis: 15%;
+  }
+}
+
+.container__restaurant {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 5px solid magenta;
+}
+
+.container__list {
+  display: flex;
+  flex-flow: row wrap;
+  border: 5px solid cadetblue;
+
+  & > li {
+    flex: 1 0 20%;
+  }
+}
+
+.container__reviews {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 5px solid blue;
+}
+
+
+.container__footer {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 5px solid skyblue;
+}
+
+
+
+
+// .container {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // border: 1px solid blueviolet;
+  // box-shadow: inset 0 0 0 2px blueviolet;
+
+  .col {
+    // flex: 1 1 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+// temp
+div.row {
+  border: 1px solid green;
+
+}
+.container__info {
+  // border: 1px solid magenta;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+
+///////////////////////////////////////////////////////////
+// Queries temp location
+///////////////////////////////////////////////////////////
+@media (min-width: 992px) {
+  .container__content {
+    flex-flow: row nowrap;
+
+    .container__info {
+      flex: 1;
+    }
+
+    .container__map {
+      flex: 2;
+    }
+  }
+
+  // .row {
+  //   flex-direction: row;
+
+  //   .col {
+  //     // flex: 0 0 50%;
+  //   }
+  // }
+
+  .map.restaurants {
+    height: 100%;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------------
+// Breakpoints
+// --------------------------------------------------------
+// [XS]
+
+// [SM]
+@media (min-width: 700px) {
+
+}
+
+// [MD]
+
+
+// [LG]
+@media (min-width: 1024px) {
+
+}
+
+// [XL]
+@media (min-width: 1400px) {
+
+}
