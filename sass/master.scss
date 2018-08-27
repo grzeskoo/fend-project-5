@@ -4,18 +4,20 @@
 // [Import]
 @import "_colors.scss";
 @import "_normalize.scss";
+@import "_spacing.scss";
 @import "_styles.scss";
+@import "_typography.scss";
 
 // [Extends]
 // Re-usable styles
 %flex-col {
-  display: flex;
-  flex-flow: column nowrap;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 %flex-row {
-  display: flex;
-  flex-flow: row nowrap;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 // [Mixins]
@@ -24,31 +26,21 @@
 //   display: flex;
 //   flex-flow: column nowrap;
 // }
-
 // @mixin flex-row {
 //   display: flex;
 //   flex-flow: row nowrap;
 // }
-
 @mixin flex ($flow) {
-  display: flex;
+    display: flex;
 
-  @if $flow == "col" {
-    flex-flow: column nowrap;
-    border: 2px solid red;
-  }
-  @else if $flow == "row" {
-    flex-flow: row nowrap;
-  }
+    @if $flow=="col" {
+        flex-flow: column nowrap;
+        border: 2px solid red;
+    }
+    @else if $flow=="row" {
+        flex-flow: row nowrap;
+    }
 }
-
-// --------------------------------------------------------
-// Global
-// --------------------------------------------------------
-// [Reset]
-// Normalize styles to simple baseline
-
-
 
 // --------------------------------------------------------
 // Containers
@@ -56,116 +48,107 @@
 // [Main]
 // Wrapper for entire page
 .body {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
 }
 
 .container__header {
-  border: 5px solid mediumseagreen;
+  display: flex;
+    // border: 2px solid mediumseagreen;
 }
 
 .container__content {
-  display: flex;
-  flex-flow: column nowrap;
-  border: 5px solid violet;
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid violet;
 
+    .container__breadcrumb {
+        order: 1;
+    }
+    .container__map {
+        order: 2;
+        align-self: stretch;
+    }
+    .container__info {
+        order: 3;
+        align-self: stretch;
+    }
 }
 
 .container__breadcrumb {
-  display: flex;
-  flex-flow: row nowrap;
-  border: 5px solid red;
+    // border: 2px solid red;
 }
 
 .container__info {
-  display: flex;
-  flex-flow: column nowrap;
-  border: 5px solid yellowgreen;
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid yellowgreen;
 }
 
 .container__map {
-  border: 5px solid orange;
+    // border: 2px solid orange;
 
-  .map {
-    width: 100%;
-    height: 400px;
-  }
+    .map {
+        width: 100%;
+        height: 400px;
+    }
 }
 
 .container__filter {
-  display: flex;
-  flex-flow: row nowrap;
-  border: 5px solid deeppink;
+    display: flex;
+    flex-flow: row nowrap;
+    // border: 2px solid deeppink;
 
-  & > select {
-    flex-basis: 15%;
-  }
+    >select {
+        flex-basis: 20%;
+    }
 }
 
 .container__restaurant {
-  display: flex;
-  flex-flow: column nowrap;
-  border: 5px solid magenta;
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid magenta;
 }
 
 .container__list {
-  display: flex;
-  flex-flow: row wrap;
-  border: 5px solid cadetblue;
+    display: flex;
+    flex-flow: row wrap;
+    // border: 2px solid cadetblue;
 
-  & > li {
-    flex: 1 0 20%;
-  }
+    >li {
+        display: flex;
+        flex-flow: column nowrap;
+    }
 }
 
 .container__reviews {
-  display: flex;
-  flex-flow: column nowrap;
-  border: 5px solid blue;
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid blue;
+
+    li {
+        display: flex;
+        flex-flow: column nowrap;
+
+        &>div {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
 
 
 .container__footer {
-  display: flex;
-  flex-flow: row nowrap;
-  border: 5px solid skyblue;
+    display: flex;
+    flex-flow: row nowrap;
+    // border: 2px solid skyblue;
 }
 
-
-
-
-// .container {
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-.row {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  // border: 1px solid blueviolet;
-  // box-shadow: inset 0 0 0 2px blueviolet;
-
-  .col {
-    // flex: 1 1 auto;
-    max-width: 100%;
-    width: 100%;
-  }
-}
-
-// temp
-div.row {
-  border: 1px solid green;
-
-}
-.container__info {
-  // border: 1px solid magenta;
-}
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 
@@ -173,33 +156,33 @@ img {
 ///////////////////////////////////////////////////////////
 // Queries temp location
 ///////////////////////////////////////////////////////////
-@media (min-width: 992px) {
-  .container__content {
-    flex-flow: row nowrap;
-
-    .container__info {
-      flex: 1;
+@media (min-width: 30rem) {
+    .container__list>li {
+        flex: 1 0 40%;
     }
-
-    .container__map {
-      flex: 2;
-    }
-  }
-
-  // .row {
-  //   flex-direction: row;
-
-  //   .col {
-  //     // flex: 0 0 50%;
-  //   }
-  // }
-
-  .map.restaurants {
-    height: 100%;
-  }
 }
 
+@media (min-width: 50rem) {
+    .container__content {
+        flex-flow: row wrap;
 
+        .container__info {
+            order: 2;
+            flex: 1;
+        }
+
+        .container__map {
+            order: 3;
+            flex: 2;
+        }
+    }
+
+    .container__list>li {
+        flex: 1 0 15%;
+    }
+
+    .map.restaurants { height: 100%; }
+}
 
 
 
@@ -207,21 +190,12 @@ img {
 // Breakpoints
 // --------------------------------------------------------
 // [XS]
-
 // [SM]
-@media (min-width: 700px) {
-
-}
+@media (min-width: 700px) {}
 
 // [MD]
-
-
 // [LG]
-@media (min-width: 1024px) {
-
-}
+@media (min-width: 1024px) {}
 
 // [XL]
-@media (min-width: 1400px) {
-
-}
+@media (min-width: 1400px) {}

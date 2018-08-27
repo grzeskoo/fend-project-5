@@ -1,7 +1,20 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// --------------------------------------------------------
+// Normalize
+//
+// [Source]
+// http://meyerweb.com/eric/tools/css/reset/
+// v2.0 | 20110126
+// License: None (Public Domain)
+//
+// [Note]
+// Additional styling included.
+// --------------------------------------------------------
+
+*,
+*:after,
+*:before{
+  box-sizing: inherit;
+}
 
 html,
 body,
@@ -92,8 +105,7 @@ video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
-
+// HTML5 display-role reset for older browsers
 article,
 aside,
 details,

@@ -17,6 +17,7 @@
     },
     "css": {
         "allowed_file_extensions": ["css", "scss", "sass", "less"],
+		"brace_style": "end-expand",
         "end_with_newline": true,
         "indent_char": " ",
         "indent_size": 4,
