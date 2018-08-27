@@ -168,15 +168,21 @@ createReviewHTML = (review) => {
   // Add title div to list item
   li.appendChild(title);
 
-  const rating = document.createElement('span');
+
+
+  const body = document.createElement('div');
+
+  const rating = document.createElement('h4');
   rating.innerHTML = `Rating: ${review.rating}`;
   rating.setAttribute('class', 'review__rating');
-  li.appendChild(rating);
+  body.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   comments.setAttribute('class', 'review__comments');
-  li.appendChild(comments);
+  body.appendChild(comments);
+
+  li.appendChild(body);
 
   return li;
 }

@@ -194,8 +194,10 @@ table {
   padding: .8em 1.1em;
 }
 
-.container__reviews li > span:first-of-type {
+.container__reviews li h4 {
   display: inline;
+  padding: 4px;
+  border-radius: 4px;
 }
 
 .container__reviews li > p {
@@ -323,7 +325,7 @@ ul, li {
 }
 
 .container__info {
-  background-color: #eeeeee;
+  background-color: #f3f3f3;
 }
 
 .container__reviews li {
@@ -333,21 +335,21 @@ ul, li {
           box-shadow: 0.2rem 0.3rem 0.3rem #eeeeee;
 }
 
-.container__reviews li div {
+.container__reviews li div:first-of-type {
   background-color: #333333;
   border-radius: 1.2rem 0 0;
   color: #fdfdfd;
 }
 
-.container__reviews li div .review__name {
+.container__reviews li div:first-of-type .review__name {
   font-size: 12pt;
 }
 
-.container__reviews li div .review__date {
+.container__reviews li div:first-of-type .review__date {
   color: #dddddd;
 }
 
-.container__reviews li > span:first-of-type {
+.container__reviews li h4 {
   background-color: #f58500;
   color: #fdfdfd;
   font-weight: 500;
@@ -509,7 +511,7 @@ h3 {
           flex-flow: column nowrap;
 }
 
-.container__reviews li > div {
+.container__reviews li div:first-of-type {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

@@ -137,7 +137,7 @@ ul, li {
 }
 
 .container__info {
-  background-color: $color-mono-04;
+  background-color: $color-mono-03;
 }
 
 // [Reviews]
@@ -148,7 +148,7 @@ ul, li {
     border-radius: 1.2rem 0 1.2rem 0;
     box-shadow: .2rem .3rem .3rem $color-mono-04;
 
-    div {
+    div:first-of-type {
       background-color: $color-mono-09;
       border-radius: 1.2rem 0 0;
       color: $color-mono-02;
@@ -162,7 +162,7 @@ ul, li {
       }
     }
 
-    &>span:first-of-type {
+    h4 {
       background-color: $color-orange-02;
       color: $color-mono-02;
       font-weight: 500;

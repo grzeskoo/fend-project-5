@@ -73,8 +73,12 @@
       padding: .8em 1.1em;
     }
 
-    &>span:first-of-type {
+    h4 {
       display: inline;
+      padding: 4px;
+      border-radius: 4px;
+      // float: left;
+      // margin-right: auto;
     }
 
     &>p {
