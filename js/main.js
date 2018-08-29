@@ -9,6 +9,7 @@ var markers = []
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
+  registerServiceWorker();
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -196,8 +197,22 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     self.markers.push(marker);
   });
-
 }
+
+registerServiceWorker = () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+    .then(reg => {
+      console.log('Registration successful. Scope: ' + reg.scope);
+    }).catch(err => {
+      console.log('Registration failed with error: ', err);
+    });
+  } else {
+    console.log('Service Worker not detected in this browser.');
+  }
+};
+
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -208,4 +223,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
