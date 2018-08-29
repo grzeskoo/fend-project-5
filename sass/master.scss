@@ -3,6 +3,7 @@
 // --------------------------------------------------------
 // [Import]
 @import "_colors.scss";
+@import "_grid.scss";
 @import "_normalize.scss";
 @import "_spacing.scss";
 @import "_styles.scss";
@@ -10,15 +11,15 @@
 
 // [Extends]
 // Re-usable styles
-%flex-col {
-    display: flex;
-    flex-flow: column nowrap;
-}
+// %flex-col {
+//     display: flex;
+//     flex-flow: column nowrap;
+// }
 
-%flex-row {
-    display: flex;
-    flex-flow: row nowrap;
-}
+// %flex-row {
+//     display: flex;
+//     flex-flow: row nowrap;
+// }
 
 // [Mixins]
 // Not sure if I'm doing this right
@@ -30,172 +31,157 @@
 //   display: flex;
 //   flex-flow: row nowrap;
 // }
-@mixin flex ($flow) {
-    display: flex;
+// @mixin flex ($flow) {
+//     display: flex;
 
-    @if $flow=="col" {
-        flex-flow: column nowrap;
-        border: 2px solid red;
-    }
-    @else if $flow=="row" {
-        flex-flow: row nowrap;
-    }
-}
+//     @if $flow=="col" {
+//         flex-flow: column nowrap;
+//         border: 2px solid red;
+//     }
+//     @else if $flow=="row" {
+//         flex-flow: row nowrap;
+//     }
+// }
 
 // --------------------------------------------------------
 // Containers
 // --------------------------------------------------------
 // [Main]
 // Wrapper for entire page
-.body {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-}
+// .body {
+//     display: flex;
+//     flex-flow: column nowrap;
+//     width: 100%;
+// }
 
-.container__header {
-  display: flex;
-    // border: 2px solid mediumseagreen;
-}
+// .container__header {
+//   display: flex;
+//   flex-flow: row nowrap;
+//     // border: 2px solid mediumseagreen;
+// }
 
-.container__content {
-    display: flex;
-    flex-flow: column nowrap;
-    // border: 2px solid violet;
+// .container__content {
+//     display: flex;
+//     flex-flow: column nowrap;
+//     // border: 2px solid violet;
 
-    .container__breadcrumb {
-        order: 1;
-    }
-    .container__map {
-        order: 2;
-        align-self: stretch;
-    }
-    .container__info {
-        order: 3;
-        align-self: stretch;
-    }
-}
+//     .container__breadcrumb {
+//         order: 1;
+//     }
+//     .container__map {
+//         order: 2;
+//         align-self: stretch;
+//     }
+//     .container__info {
+//         order: 3;
+//         align-self: stretch;
+//     }
+// }
 
-.container__breadcrumb {
-    // border: 2px solid red;
-}
+// .container__breadcrumb {
+//     // border: 2px solid red;
+// }
 
-.container__info {
-    display: flex;
-    flex-flow: column nowrap;
-    // border: 2px solid yellowgreen;
-}
+// .container__info {
+//     display: flex;
+//     flex-flow: column nowrap;
+//     // border: 2px solid yellowgreen;
+// }
 
-.container__map {
-    // border: 2px solid orange;
+// .container__map {
+//     // border: 2px solid orange;
 
-    .map {
-        width: 100%;
-        height: 400px;
-    }
-}
+//     .map {
+//         width: 100%;
+//         height: 400px;
+//     }
+// }
 
-.container__filter {
-    display: flex;
-    flex-flow: row nowrap;
-    // border: 2px solid deeppink;
+// .container__filter {
+//     display: flex;
+//     flex-flow: row nowrap;
+//     // border: 2px solid deeppink;
 
-    >select {
-        flex-basis: 20%;
-    }
-}
+//     >select {
+//         flex-basis: 20%;
+//     }
+// }
 
-.container__restaurant {
-    display: flex;
-    flex-flow: column nowrap;
-    // border: 2px solid magenta;
-}
+// .container__restaurant {
+//     display: flex;
+//     flex-flow: column nowrap;
+//     // border: 2px solid magenta;
+// }
 
-.container__list {
-    display: flex;
-    flex-flow: row wrap;
-    // border: 2px solid cadetblue;
+// .container__list {
+//     display: flex;
+//     flex-flow: row wrap;
+//     // border: 2px solid cadetblue;
 
-    >li {
-        display: flex;
-        flex-flow: column nowrap;
-    }
-}
+//     >li {
+//         display: flex;
+//         flex-flow: column nowrap;
+//     }
+// }
 
-.container__reviews {
-    display: flex;
-    flex-flow: column nowrap;
-    // border: 2px solid blue;
+// .container__reviews {
+//     display: flex;
+//     flex-flow: column nowrap;
+//     // border: 2px solid blue;
 
-    li {
-        display: flex;
-        flex-flow: column nowrap;
+//     li {
+//         display: flex;
+//         flex-flow: column nowrap;
 
-        div:first-of-type {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-}
-
-
-.container__footer {
-    display: flex;
-    flex-flow: row nowrap;
-    // border: 2px solid skyblue;
-}
+//         div:first-of-type {
+//             align-items: center;
+//             display: flex;
+//             justify-content: space-between;
+//         }
+//     }
+// }
 
 
-img {
-    max-width: 100%;
-}
+// .container__footer {
+//     display: flex;
+//     flex-flow: row nowrap;
+//     // border: 2px solid skyblue;
+// }
+
+
+// img {
+//     max-width: 100%;
+// }
 
 
 
 ///////////////////////////////////////////////////////////
 // Queries temp location
 ///////////////////////////////////////////////////////////
-@media (min-width: 30rem) {
-    .container__list>li {
-        flex: 1 0 40%;
-    }
-}
+// @media (min-width: 30rem) {
+//     .container__list>li {
+//         flex: 1 0 40%;
+//     }
+// }
 
-@media (min-width: 50rem) {
-    .container__content {
-        flex-flow: row wrap;
+// @media (min-width: 50rem) {
+//     .container__content {
+//         flex-flow: row wrap;
 
-        .container__info {
-            order: 2;
-            flex: 1;
-        }
+//         .container__info {
+//             order: 2;
+//             flex: 1;
+//         }
 
-        .container__map {
-            order: 3;
-            flex: 2;
-        }
-    }
+//         .container__map {
+//             order: 3;
+//             flex: 2;
+//         }
+//     }
 
-    .container__list>li {
-        flex: 1 0 15%;
-    }
+//     .container__list>li {
+//         flex: 1 0 15%;
+//     }
 
-    .map.restaurants { height: 100%; }
-}
-
-
-
-// --------------------------------------------------------
-// Breakpoints
-// --------------------------------------------------------
-// [XS]
-// [SM]
-@media (min-width: 700px) {}
-
-// [MD]
-// [LG]
-@media (min-width: 1024px) {}
-
-// [XL]
-@media (min-width: 1400px) {}
+//     .map.restaurants { height: 100%; }
+// }
