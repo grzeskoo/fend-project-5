@@ -1,84 +1,117 @@
-// --------------------------------------------------------
-// Grid
+//=========================================================
+// _grid.scss
 //
-// Flexbox and wrapping for containers
-// --------------------------------------------------------
-// [Main]
-// Wrapper for entire page
-.body {
+// Info:  Flexbox, wrapping, and alignment for containers
+//=========================================================
+
+//=====================================
+// SASS
+//=====================================
+
+//=================
+// MIXINS
+//
+// Info:  Determine flexbox layout
+//=================
+@mixin flex($direction, $wrap) {
     display: flex;
-    flex-flow: column nowrap;
+
+    @if $direction == "row" {
+        flex-direction: row;
+    }
+    @else if $direction == "column" {
+        flex-direction: column;
+    }
+
+    @if $wrap == "wrap" {
+        flex-wrap: wrap;
+    }
+    @else if $wrap == "nowrap" {
+        flex-wrap: nowrap;
+    }
+}
+
+
+//=====================================
+// Global
+//=====================================
+
+//=================
+// BODY
+//
+// Info:  Page sizing and layout
+//=================
+body {
+    /* Prevent force wrapping header text */
+    min-width: 480px;
     width: 100%;
+
+    /* Layout for restaurant.html */
+    &.restaurant{
+        display: flex;
+        flex-flow: column nowrap;
+    }
 }
 
 
 
-// [Sections]
-// Major page sections
-.container__header {
-    display: flex;
-    flex-flow: row nowrap;
-    // border: 2px solid mediumseagreen;
-}
+//=====================================
+// Sections
+//=====================================
 
-
-
+//=================
+// HEADER
 //
-.container__content {
-    display: flex;
-    flex-flow: column nowrap;
-    // border: 2px solid violet;
-
-    .container__breadcrumb {
-        order: 1;
-    }
-
-    .container__map {
-        order: 2;
-        align-self: stretch;
-    }
-
-    .container__info {
-        order: 3;
-        align-self: stretch;
-    }
-}
-
-.container__info {
-    display: flex;
-    flex-flow: column nowrap;
-    // border: 2px solid yellowgreen;
-}
-
-.container__map {
-    // border: 2px solid orange;
-
-    .map {
-        width: 100%;
-        height: 400px;
-    }
-}
-
-.container__filter {
+// File:  *.html
+// Info:  Header bar layout
+//=================
+.container__header {
+    align-items: center;
     display: flex;
     flex-flow: row nowrap;
-    // border: 2px solid deeppink;
+}
 
+//=================
+// MAP
+//
+// File:  *.html
+// Info:  Wrapper for map
+//=================
+/* Map sizing; changes above small items */
+.container__map {
+    .map {
+        height: 400px;
+        width: 100%;
+    }
+}
+
+//=================
+// FILTERS
+//
+// File:  index.html
+// Info:  Wrapping for restaurant list filters
+//=================
+.container__filter {
+    /* Grow/shrink filters with device */
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+
+    /* Don't span to fit the container */
     >select {
         flex-basis: 20%;
     }
 }
 
-.container__restaurant {
-    display: flex;
-    flex-flow: column nowrap;
-    // border: 2px solid magenta;
-}
-
+//=================
+// LIST
+//
+// File:  index.html
+// Info:  Wrapping for list of restaurants
+//=================
 .container__list {
     display: flex;
     flex-flow: row wrap;
-    // border: 2px solid cadetblue;
 
     >li {
         display: flex;
@@ -86,10 +119,66 @@
     }
 }
 
+//=================
+// CONTENT
+//
+// File:  restaurant.html
+// Info:  Wrapper for info panel and map
+//=================
+.container__content {
+    display: flex;
+    flex-flow: column nowrap;
+
+    /* Keep breadcrumb on top */
+    .container__breadcrumb {
+        order: 1;
+    }
+
+    /* Put map before info in small layout */
+    .container__map {
+        align-self: stretch;
+        order: 2;
+    }
+
+    /* Info panel after map in small layout */
+    .container__info {
+        align-self: stretch;
+        order: 3;
+    }
+}
+
+//=================
+// INFORMATION
+//
+// File:  restaurant.html
+// Info:  Wrapper for inside info panel
+//=================
+.container__info {
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: auto;
+}
+
+//=================
+// RESTAURANT
+//
+// File:  restaurant.html
+// Info:  Wrapping for restaurant listing
+//=================
+.container__restaurant {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+//=================
+// REVIEWS
+//
+// File:  restaurant.html
+// Info:  Wrapping for restaurant reviews
+//=================
 .container__reviews {
     display: flex;
     flex-flow: column nowrap;
-    // border: 2px solid blue;
 
     li {
         display: flex;
@@ -103,45 +192,71 @@
     }
 }
 
+//=================
+// FOOTER
+//
+// File:  *.html
+// Info:  Wrapping for footer
+//=================
 .container__footer {
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
-    //   justify-items: center;
-
-    >span {
-        margin: 0 0.2rem;
-    }
 }
 
 
 
+//=====================================
+// Media
+//=====================================
 
-
+//=================
+// SMALL
+//
+// Size:  640px
+// Info:  Small devices
+//=================
 @media (min-width: 40rem) {
+    /* Two list items per row */
     .container__list>li {
         flex: 1 0 40%;
     }
 }
 
+//=================
+// MEDIUM
+//
+// Size:  800px
+// Info:  Medium devices
+//=================
 @media (min-width: 50rem) {
+    /* Three list items per row */
     .container__list>li {
         flex: 1 1 25%;
     }
 }
 
+//=================
+// LARGE
+//
+// Size:  960px
+// Info:  Large devices
+//=================
 @media (min-width: 60rem) {
-    body {
-        max-height: 100vh;
+    body.restaurant {
+        // max-height: 100vh;
     }
 
+    /* Five list items per row */
     .container__list>li {
         flex: 1 1 15%;
     }
 
+    /* Switch info panel/map to be side-by-side */
     .container__content {
         flex-flow: row wrap;
 
-
+        /* Side panel will scroll */
         .container__info {
             order: 2;
             flex: 1;
@@ -152,12 +267,14 @@
             }
         }
 
+        /* Reorder map in layout */
         .container__map {
             order: 3;
             flex: 2;
         }
     }
 
+    /* Map will fit parent height now that layout has changed */
     .map.restaurants {
         height: 100%;
     }
