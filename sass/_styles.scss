@@ -1,25 +1,48 @@
 // --------------------------------------------------------
 // Styles
+//
+// Colors, alignment, and animations
 // --------------------------------------------------------
-// [Global]
-// Global page styles
+// [Links]
+// Link styles
 a {
-  color: $color-orange-03;
-  text-decoration: none;
-
-  img {
-    border: none 0px $color-mono-01;
-  }
-
-  &:hover,
-  &:focus {
-    color: $color-blue-01;
+    color: $color-orange-03;
     text-decoration: none;
-  }
+
+    img {
+        border: none 0px $color-mono-01;
+    }
+
+    &:hover,
+    &:focus {
+        color: $color-blue-01;
+        text-decoration: none;
+    }
 }
 
-ul, li {
-  color: $color-mono-09;
+
+
+// [Images]
+// Image sizing consistency
+img {
+  max-width: 100%;
+}
+
+
+
+// [Lists]
+// Styling for lists and list items
+ul,
+li {
+    color: $color-mono-09;
+}
+
+
+
+// [Main]
+// Main page background
+.body {
+    background-color: $color-mono-02;
 }
 
 
@@ -27,145 +50,186 @@ ul, li {
 // --------------------------------------------------------
 // Containers
 // --------------------------------------------------------
-// [Main]
-// Body background
-.body {
-  background-color: $color-mono-02;
-}
-
 // [Header]
 // Header styles
 .container__header {
-  align-items: center;
-  background-color: $color-blue-04;
-  justify-content: center;
+    align-items: center;
+    background-color: $color-blue-04;
+    justify-content: center;
 
-  a {
-    color: $color-mono-01;
-  }
+    a {
+        color: $color-mono-01;
+    }
 }
+
+
 
 // [Breadcrumb]
 // Breadcrumb styles
 .container__breadcrumb {
-  background-color: $color-mono-04;
+    background-color: $color-mono-05;
 
-  li {
-    display: inline;
+    li {
+        display: inline;
 
-    &+li:before {
-      color: $color-mono-10;
-      content: "/ ";
+        &+li:before {
+            color  : $color-mono-10;
+            content: "/ ";
+        }
+
+        a {
+            color: $color-blue-02;
+        }
+
+        a:hover {
+            color          : $color-blue-03;
+            text-decoration: underline;
+        }
     }
-
-    a {
-      color: $color-blue-02;
-    }
-
-    a:hover {
-      color: $color-blue-03;
-      text-decoration: underline;
-    }
-  }
 }
 
-// [Restaurant]
-.container__restaurant {
-  .name {
-    color: $color-orange-03;
-  }
 
-  .cuisine {
-    background-color: $color-mono-09;
-    color: $color-mono-02;
-    font-size: 12pt;
-    font-weight: 300;
-    letter-spacing: 0.8rem;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .address {
-    font-size: 12pt;
-  }
-
-  .hours {
-    td {
-      color: $color-mono-07;
-    }
-  }
-}
 
 // [Filters]
+// File: index.html
+// Restaurant list filter styles
 .container__filter {
-  background-color: $color-blue-01;
-  align-items: center;
+    background-color: $color-blue-01;
+    align-items     : center;
 
-  h2 {
-    color: $color-mono-01;
-  }
+    h2 {
+        color: $color-mono-01;
+    }
 
-  select {
-    background-color: $color-mono-01;
-    border: 1px solid $color-mono-01;
-    border-radius: 2px;
-  }
+    select {
+        background-color: $color-mono-01;
+        border          : 1px solid $color-mono-01;
+        border-radius   : 2px;
+    }
 }
+
+
 
 // [List]
+// File: index.html
+// Styles for list of restaurants
 .container__list {
-  background-color: $color-mono-03;
+    background-color: $color-mono-03;
 
-  li {
-    background-color: $color-mono-01;
-    border-radius: .3rem;
-    text-align: left;
+    li {
+        background-color: $color-mono-01;
+        border-radius   : 0.3rem;
+        text-align      : left;
+        transition      : 0.2s;
 
-    h3 {
-      color: $color-orange-03;
-      font-weight: 300;
-      text-transform: uppercase;
+        h3 {
+            color         : $color-orange-03;
+            font-weight   : 300;
+            text-transform: uppercase;
+        }
+
+        a {
+            background-color: $color-orange-01;
+            color           : $color-mono-01;
+            text-align      : center;
+            text-transform  : uppercase;
+        }
+
+        &:hover {
+            box-shadow: 0 0.2rem 0.8rem 0.06rem $color-mono-06;
+            transform : translate(0, -1px);
+        }
     }
-
-    a {
-      background-color: $color-orange-01;
-      color: $color-mono-01;
-      text-align: center;
-      text-transform: uppercase;
-    }
-  }
 }
 
+
+
+// [Info]
+// File: restaurant.html
+// Padding for info panel, containing restaurant info and reviews
 .container__info {
-  background-color: $color-mono-03;
+    background-color: $color-mono-03;
 }
+
+
+
+// [Restaurant]
+// File: restaurant.html
+// Restaurant listing styles
+.container__restaurant {
+    .name {
+        color: $color-orange-03;
+    }
+
+    .restaurant-img {
+      border-radius: 1.2rem 0 0;
+    }
+
+    .cuisine {
+        background-color: $color-mono-09;
+        border-radius   : 0 0 1.2rem;
+        color           : $color-mono-02;
+        font-size       : 12pt;
+        font-weight     : 300;
+        letter-spacing  : 0.8rem;
+        text-align      : center;
+        text-transform  : uppercase;
+    }
+
+    .address {
+        font-size: 12pt;
+    }
+
+    .hours {
+        td {
+            color: $color-mono-07;
+        }
+    }
+}
+
+
 
 // [Reviews]
+// restaurant.html
+// Styles for reviews for restaurant entry
 .container__reviews {
-  li {
-    background-color: $color-mono-02;
-    // border: 2px solid $color-mono-03;
-    border-radius: 1.2rem 0 1.2rem 0;
-    box-shadow: .2rem .3rem .3rem $color-mono-04;
+    li {
+        background-color: $color-mono-02;
+        border-radius   : 1.2rem 0 1.2rem 0;
+        box-shadow      : 0 0.2rem 0.8rem 0.06rem $color-mono-05;
 
-    div:first-of-type {
-      background-color: $color-mono-09;
-      border-radius: 1.2rem 0 0;
-      color: $color-mono-02;
+        div:first-of-type {
+            align-content   : center;
+            background-color: $color-mono-09;
+            border-radius   : 1.2rem 0 0;
+            color           : $color-mono-02;
 
-      .review__name {
-        font-size: 12pt;
-      }
+            .review__name {
+                font-size: 12pt;
+            }
 
-      .review__date {
-        color: $color-mono-05;
-      }
+            .review__date {
+                color: $color-mono-05;
+            }
+        }
+
+        h4 {
+            background-color: $color-orange-02;
+            color           : $color-mono-02;
+            font-weight     : 500;
+        }
     }
+}
 
-    h4 {
-      background-color: $color-orange-02;
-      color: $color-mono-02;
-      font-weight: 500;
-    }
-  }
+
+
+// Footer
+// Footer styles
+.container__footer {
+    align-items: center;
+    background-color: $color-blue-04;
+    color: $color-mono-05;
+    justify-content: center;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
 }

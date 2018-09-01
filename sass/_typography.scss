@@ -17,7 +17,7 @@ h2 {
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   letter-spacing: 0.8rem;
   line-height: 1.2;
 }
@@ -32,6 +32,11 @@ h3 {
   // line-height: 1.2;
 }
 
+@media (min-width: 40rem) {
+  h1 {
+    font-size: 1.4rem;
+  }
+}
 //
 // TO BE COMPLETED
 //

@@ -6,134 +6,159 @@
 // [Main]
 // Wrapper for entire page
 .body {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
 }
+
+
 
 // [Sections]
 // Major page sections
 .container__header {
-  display: flex;
-  flex-flow: row nowrap;
+    display: flex;
+    flex-flow: row nowrap;
     // border: 2px solid mediumseagreen;
 }
 
-.container__content {
-  display: flex;
-  flex-flow: column nowrap;
-  // border: 2px solid violet;
 
-  .container__breadcrumb {
-      order: 1;
-  }
-  .container__map {
-      order: 2;
-      align-self: stretch;
-  }
-  .container__info {
-      order: 3;
-      align-self: stretch;
-  }
+
+//
+.container__content {
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid violet;
+
+    .container__breadcrumb {
+        order: 1;
+    }
+
+    .container__map {
+        order: 2;
+        align-self: stretch;
+    }
+
+    .container__info {
+        order: 3;
+        align-self: stretch;
+    }
 }
 
 .container__info {
-  display: flex;
-  flex-flow: column nowrap;
-  // border: 2px solid yellowgreen;
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid yellowgreen;
 }
 
 .container__map {
-  // border: 2px solid orange;
+    // border: 2px solid orange;
 
-  .map {
-      width: 100%;
-      height: 400px;
-  }
+    .map {
+        width: 100%;
+        height: 400px;
+    }
 }
 
 .container__filter {
-  display: flex;
-  flex-flow: row nowrap;
-  // border: 2px solid deeppink;
+    display: flex;
+    flex-flow: row nowrap;
+    // border: 2px solid deeppink;
 
-  >select {
-      flex-basis: 20%;
-  }
+    >select {
+        flex-basis: 20%;
+    }
 }
 
 .container__restaurant {
-  display: flex;
-  flex-flow: column nowrap;
-  // border: 2px solid magenta;
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid magenta;
 }
 
 .container__list {
-  display: flex;
-  flex-flow: row wrap;
-  // border: 2px solid cadetblue;
+    display: flex;
+    flex-flow: row wrap;
+    // border: 2px solid cadetblue;
 
-  >li {
-      display: flex;
-      flex-flow: column nowrap;
-  }
+    >li {
+        display: flex;
+        flex-flow: column nowrap;
+    }
 }
 
 .container__reviews {
-  display: flex;
-  flex-flow: column nowrap;
-  // border: 2px solid blue;
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 2px solid blue;
 
-  li {
-      display: flex;
-      flex-flow: column nowrap;
+    li {
+        display: flex;
+        flex-flow: column nowrap;
 
-      div:first-of-type {
-          align-items: center;
-          display: flex;
-          justify-content: space-between;
-      }
-  }
+        div:first-of-type {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
 
 .container__footer {
-  display: flex;
-  flex-flow: row nowrap;
-  // border: 2px solid skyblue;
+    display: flex;
+    flex-flow: row wrap;
+    //   justify-items: center;
+
+    >span {
+        margin: 0 0.2rem;
+    }
 }
 
 
-img {
-  max-width: 100%;
-}
 
 
 
-
-@media (min-width: 30rem) {
-  .container__list>li {
-      flex: 1 0 40%;
-  }
+@media (min-width: 40rem) {
+    .container__list>li {
+        flex: 1 0 40%;
+    }
 }
 
 @media (min-width: 50rem) {
-  .container__content {
-      flex-flow: row wrap;
+    .container__list>li {
+        flex: 1 1 25%;
+    }
+}
 
-      .container__info {
-          order: 2;
-          flex: 1;
-      }
+@media (min-width: 60rem) {
+    body {
+        max-height: 100vh;
+    }
 
-      .container__map {
-          order: 3;
-          flex: 2;
-      }
-  }
+    .container__list>li {
+        flex: 1 1 15%;
+    }
 
-  .container__list>li {
-      flex: 1 0 15%;
-  }
+    .container__content {
+        flex-flow: row wrap;
 
-  .map.restaurants { height: 100%; }
+
+        .container__info {
+            order: 2;
+            flex: 1;
+            overflow: auto;
+
+            section {
+                flex-shrink: 0;
+            }
+        }
+
+        .container__map {
+            order: 3;
+            flex: 2;
+        }
+    }
+
+    .map.restaurants {
+        height: 100%;
+    }
 }

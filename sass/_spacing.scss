@@ -4,85 +4,74 @@
 // Size and spacing for all items
 // --------------------------------------------------------
 // [Header]
-.container__header {
-  height: 5rem;
-}
+.container__header { height: 5rem; }
 
 // [Breadcrumb]
 .container__breadcrumb {
   padding: 1em 0 1em 1em;
 
-  li+li:before {
-    padding: .6rem;
-  }
+  li+li:before { padding: 0.6rem; }
 }
+
+.container__info { padding: 0 2rem; }
 
 // [Restaurant]
 .container__restaurant {
-  .cuisine {
-    padding: .4rem 0 .4rem 0;
-  }
+  .name { padding: 1.2rem 0; }
 
-  .address {
-    padding: .8rem 0;
-  }
+  .cuisine { padding: 0.4rem 0; }
+
+  tr>td:last-of-type { padding: 0 0 0.2rem 1rem; }
+
+  .address { padding: 0.8rem 0; }
 }
 
 // [Filter]
 .container__filter {
   select {
     height: 1.6rem;
-    margin: .6rem 0 .6rem .6rem;
-    padding: .06rem .4rem;
+    margin: 0.6rem 0 0.6rem 0.6rem;
+    padding: 0.06rem 0.4rem;
   }
 }
 
 // [List]
 .container__list {
-  padding: 10px;
+  padding: 0.6rem;
 
   li {
-    margin: 10px;
-    padding: 10px;
+    margin: 0.6rem;
+    padding: 0.6rem;
 
-    h3 {
-      margin: 15px 0 10px;
-      // margin-bottom: auto;
-    }
+    h3 { margin: 1rem 0 0.6rem; }
 
-    p:first-of-type {
-      margin-top: auto;
-    }
+    p:first-of-type { margin-top: auto; }
 
-    p:last-of-type {
-      margin-bottom: 15px;
-    }
+    p:last-of-type { margin-bottom: 1rem; }
 
-    a {
-      padding: 10px 30px;
-    }
+    a { padding: 0.6rem 1.8rem; }
   }
 }
 
 // [Reviews]
 .container__reviews {
-  li {
-    margin: 2em;
+  h2 { padding: 2rem 0 1.2rem; }
 
-    div {
-      padding: .8em 1.1em;
-    }
+  li {
+    margin-bottom: 2rem;
+
+    > * { padding: 1rem; }
 
     h4 {
       display: inline;
-      padding: 4px;
-      border-radius: 4px;
-      // float: left;
-      // margin-right: auto;
+      padding: 0.4rem;
+      border-radius: 0.2rem;
     }
 
-    &>p {
-      margin: 1em;
-    }
+    .review__comments { margin-top: 0.8rem; }
   }
+}
+
+.container__footer {
+  height: 4rem;
 }
