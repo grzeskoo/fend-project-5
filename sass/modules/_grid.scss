@@ -16,17 +16,19 @@
 @mixin flex($direction, $wrap) {
     display: flex;
 
-    @if $direction == "row" {
+    @if $direction=="row" {
         flex-direction: row;
     }
-    @else if $direction == "column" {
+
+    @else if $direction=="column" {
         flex-direction: column;
     }
 
-    @if $wrap == "wrap" {
+    @if $wrap=="wrap" {
         flex-wrap: wrap;
     }
-    @else if $wrap == "nowrap" {
+
+    @else if $wrap=="nowrap" {
         flex-wrap: nowrap;
     }
 }
@@ -44,8 +46,8 @@
 body {
     width: 100%;
 
-    /* Layout for restaurant.html */
-    &.restaurant{
+    &.restaurant {
+        /* Layout for restaurant.html */
         @include flex("column", "nowrap");
     }
 }
@@ -93,8 +95,8 @@ body {
     align-items: center;
     @include flex("row", "nowrap");
 
-    /* Don't span to fit the container */
     >select {
+        /* Don't span to fit the container */
         flex-basis: 20%;
     }
 }
@@ -122,19 +124,19 @@ body {
 .container__content {
     @include flex("column", "nowrap");
 
-    /* Keep breadcrumb on top */
     .container__breadcrumb {
+        /* Keep breadcrumb on top */
         order: 1;
     }
 
-    /* Put map before info in small layout */
     .container__map {
+        /* Put map before info in small layout */
         align-self: stretch;
         order: 2;
     }
 
-    /* Info panel after map in small layout */
     .container__info {
+        /* Info panel after map in small layout */
         align-self: stretch;
         order: 3;
     }
@@ -206,8 +208,8 @@ body {
 // Info:  Small devices
 //=================
 @media (min-width: 40rem) {
-    /* Two restaurants per row */
     .container__list>li {
+        /* Two restaurants per row */
         flex: 1 0 40%;
     }
 }
@@ -219,8 +221,8 @@ body {
 // Info:  Medium devices
 //=================
 @media (min-width: 50rem) {
-    /* Three restaurants per row */
     .container__list>li {
+        /* Three restaurants per row */
         flex: 1 1 25%;
     }
 }
@@ -234,20 +236,19 @@ body {
 @media (min-width: 60rem) {
     body.restaurant {
         max-height: 100vh;
-        // height: 100vh;
     }
 
-    /* Five restaurants per row */
     .container__list>li {
+        /* Five restaurants per row */
         flex: 1 1 15%;
     }
 
-    /* Switch info panel/map to be side-by-side */
     .container__content {
+        /* Switch info panel/map to be side-by-side */
         flex-flow: row wrap;
 
-        /* Side panel will scroll */
         .container__info {
+            /* Side panel will scroll */
             order: 2;
             flex: 1;
             overflow: auto;
@@ -257,15 +258,15 @@ body {
             }
         }
 
-        /* Reorder map in layout */
         .container__map {
+            /* Reorder map in layout */
             order: 3;
             flex: 2;
         }
     }
 
-    /* Map will fit parent height now that layout has changed */
     .map.restaurants {
+        /* Map will fit parent height now that layout has changed */
         height: 100%;
     }
 }

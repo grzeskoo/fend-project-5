@@ -1,9 +1,9 @@
 body {
   width: 100%;
-  /* Layout for restaurant.html */
 }
 
 body.restaurant {
+  /* Layout for restaurant.html */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,10 +53,10 @@ body.restaurant {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  /* Don't span to fit the container */
 }
 
 .container__filter > select {
+  /* Don't span to fit the container */
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
 }
@@ -95,18 +95,17 @@ body.restaurant {
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  /* Keep breadcrumb on top */
-  /* Put map before info in small layout */
-  /* Info panel after map in small layout */
 }
 
 .container__content .container__breadcrumb {
+  /* Keep breadcrumb on top */
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
 }
 
 .container__content .container__map {
+  /* Put map before info in small layout */
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
@@ -116,6 +115,7 @@ body.restaurant {
 }
 
 .container__content .container__info {
+  /* Info panel after map in small layout */
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
@@ -210,8 +210,8 @@ body.restaurant {
 }
 
 @media (min-width: 40rem) {
-  /* Two restaurants per row */
   .container__list > li {
+    /* Two restaurants per row */
     -webkit-box-flex: 1;
         -ms-flex: 1 0 40%;
             flex: 1 0 40%;
@@ -219,8 +219,8 @@ body.restaurant {
 }
 
 @media (min-width: 50rem) {
-  /* Three restaurants per row */
   .container__list > li {
+    /* Three restaurants per row */
     -webkit-box-flex: 1;
         -ms-flex: 1 1 25%;
             flex: 1 1 25%;
@@ -231,22 +231,21 @@ body.restaurant {
   body.restaurant {
     max-height: 100vh;
   }
-  /* Five restaurants per row */
   .container__list > li {
+    /* Five restaurants per row */
     -webkit-box-flex: 1;
         -ms-flex: 1 1 15%;
             flex: 1 1 15%;
   }
-  /* Switch info panel/map to be side-by-side */
   .container__content {
+    /* Switch info panel/map to be side-by-side */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    /* Side panel will scroll */
-    /* Reorder map in layout */
   }
   .container__content .container__info {
+    /* Side panel will scroll */
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -260,6 +259,7 @@ body.restaurant {
         flex-shrink: 0;
   }
   .container__content .container__map {
+    /* Reorder map in layout */
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
@@ -267,8 +267,8 @@ body.restaurant {
         -ms-flex: 2;
             flex: 2;
   }
-  /* Map will fit parent height now that layout has changed */
   .map.restaurants {
+    /* Map will fit parent height now that layout has changed */
     height: 100%;
   }
 }

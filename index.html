@@ -20,27 +20,24 @@
 
   <!-- Main Content -->
   <main role="main">
-
     <!-- Map -->
-    <section class="container__map home">
-      <div class="map home" id="map" aria-label="Map"></div>
+    <section class="container__map">
+      <div class="map" id="map" aria-label="Map"></div>
     </section>
 
     <!-- Filter -->
     <section class="container__filter">
-      <select class="neighborhoods-select" id="neighborhoods-select" name="neighborhoods" aria-label="Select neighborhood" onchange="updateRestaurants()">
+      <select id="neighborhoods-select" name="neighborhoods" aria-label="Select neighborhood" onchange="updateRestaurants()">
         <option value="all">All Neighborhoods</option>
       </select>
-      <select class="cuisines-select" id="cuisines-select" name="cuisines" aria-label="Select cuisine" onchange="updateRestaurants()">
+      <select id="cuisines-select" name="cuisines" aria-label="Select cuisine" onchange="updateRestaurants()">
         <option value="all">All Cuisines</option>
       </select>
     </section>
 
     <!-- Restaurants -->
-    <ul class="container__list restaurants-list" id="restaurants-list"></ul>
-
+    <ul class="container__list" id="restaurants-list"></ul>
   </main>
-
 
   <!-- Scripts -->
   <script defer src="js/dbhelper.js"></script>

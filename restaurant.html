@@ -19,8 +19,8 @@
   </header>
 
   <!-- Breadcrumb -->
-  <section class="container__breadcrumb breadcrumb__section">
-    <ul class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb">
+  <section class="container__breadcrumb">
+    <ul id="breadcrumb" aria-label="Breadcrumb">
       <li>
         <a href="/">Home</a>
       </li>
@@ -29,14 +29,13 @@
 
   <!-- Main Content -->
   <main class="container__content" role="main">
-
     <!-- Restaurant Info -->
     <section class="container__info">
 
       <!-- Restaurant details -->
       <section class="container__restaurant" id="restaurant-container">
         <h2 class="name" id="restaurant-name"></h2>
-        <img class="img lazyload" id="restaurant-img" alt="Restaurant image">
+        <img class="lazyload" id="restaurant-img" alt="Restaurant image">
         <p class="cuisine" id="restaurant-cuisine"></p>
         <p class="address" id="restaurant-address"></p>
         <table class="hours" id="restaurant-hours"></table>
@@ -50,7 +49,7 @@
 
     <!-- Map -->
     <section class="container__map restaurants">
-      <div class="map restaurants" id="map" aria-label="Map"></div>
+      <div class="map restaurants lazyload" id="map" aria-label="Map"></div>
     </section>
   </main>
 
