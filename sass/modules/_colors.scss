@@ -1,0 +1,37 @@
+//=========================================================
+// _colors.scss
+//
+// Info:  Colors to be used for styling
+//=========================================================
+
+//=================
+// COLORS
+//
+// Info:  Color names and variables
+//        Names from http://chir.ag/projects/name-that-color
+//=================
+$color-mono-01  : #ffffff;  // white
+$color-mono-02  : #fdfdfd;  // white (approx)
+$color-mono-03  : #f3f3f3;  // concrete
+$color-mono-04  : #eeeeee;  // gallery
+$color-mono-05  : #dddddd;  // alto
+$color-mono-06  : #aaaaaa;  // silver chalice
+$color-mono-07  : #666666;  // dove gray
+$color-mono-08  : #444444;  // tundora
+$color-mono-09  : #333333;  // mine shaft
+$color-mono-10  : #000000;  // black
+$color-blue-01  : #3397db;  // curious blue
+$color-blue-02  : #0275d8;  // science blue
+$color-blue-03  : #01447e;  // congress blue
+$color-blue-04  : #252831;  // charade
+$color-orange-01: #ffa500;  // web orange
+$color-orange-02: #f58500;  // tangerine
+$color-orange-03: #f18200;  // gold drop
+
+//=================
+// ASSIGNMENTS
+//
+// Info:  Defining color palette
+//=================
+$theme-color-primary  : $color-orange-02;
+$theme-color-secondary: $color-blue-02;

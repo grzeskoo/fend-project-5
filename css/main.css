@@ -1,6 +1,4 @@
 body {
-  /* Prevent force wrapping header text */
-  min-width: 480px;
   width: 100%;
   /* Layout for restaurant.html */
 }
@@ -11,21 +9,28 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .container__header {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 /* Map sizing; changes above small items */
@@ -44,8 +49,10 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   /* Don't span to fit the container */
 }
 
@@ -60,8 +67,10 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .container__list > li {
@@ -70,8 +79,10 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .container__content {
@@ -80,8 +91,10 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   /* Keep breadcrumb on top */
   /* Put map before info in small layout */
   /* Info panel after map in small layout */
@@ -117,8 +130,10 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   overflow: auto;
 }
 
@@ -128,8 +143,10 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .container__reviews {
@@ -138,8 +155,10 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .container__reviews li {
@@ -148,37 +167,50 @@ body.restaurant {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .container__reviews li div:first-of-type {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 .container__footer {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 @media (min-width: 40rem) {
-  /* Two list items per row */
+  /* Two restaurants per row */
   .container__list > li {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 40%;
@@ -187,7 +219,7 @@ body.restaurant {
 }
 
 @media (min-width: 50rem) {
-  /* Three list items per row */
+  /* Three restaurants per row */
   .container__list > li {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 25%;
@@ -196,7 +228,10 @@ body.restaurant {
 }
 
 @media (min-width: 60rem) {
-  /* Five list items per row */
+  body.restaurant {
+    max-height: 100vh;
+  }
+  /* Five restaurants per row */
   .container__list > li {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 15%;
@@ -653,8 +688,8 @@ h2 {
 }
 
 h1 {
-  font-size: 1.2rem;
-  letter-spacing: 0.8rem;
+  font-size: 1rem;
+  letter-spacing: 0.6rem;
   line-height: 1.2;
 }
 
@@ -670,6 +705,7 @@ h3 {
 @media (min-width: 40rem) {
   h1 {
     font-size: 1.4rem;
+    letter-spacing: 0.8rem;
   }
   h2 {
     font-size: 1.3rem;
