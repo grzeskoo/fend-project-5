@@ -550,10 +550,6 @@ li {
           justify-content: center;
 }
 
-.container__header a {
-  color: #ffffff;
-}
-
 .container__breadcrumb {
   background-color: #dddddd;
 }
