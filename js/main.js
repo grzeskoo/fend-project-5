@@ -74,10 +74,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  */
 initMap = () => {
   self.newMap = L.map('map', {
-        center: [40.722216, -73.987501],
-        zoom: 12,
-        scrollWheelZoom: false
-      });
+    center: [40.722216, -73.987501],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoidGhlZGVsayIsImEiOiJjamtxMG9kY20xcDB0M3h0aGhoZGRkcDh2In0.vbf2dxkBr_OcbrludPMQDA',
     maxZoom: 18,
@@ -192,6 +192,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
     marker.on("click", onClick);
+
     function onClick() {
       window.location.href = marker.options.url;
     }
@@ -206,16 +207,15 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 registerServiceWorker = () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
-    .then(reg => {
-      console.log('ServiceWorker registration successful. Scope: ' + reg.scope);
-    }).catch(err => {
-      console.log('ServiceWorker registration failed. Error: ', err);
-    });
+      .then(reg => {
+        // console.log('ServiceWorker registration successful. Scope: ' + reg.scope);
+      }).catch(err => {
+        console.log('ServiceWorker registration failed. ', err);
+      });
   } else {
     console.log('ServiceWorker not detected in this browser.');
   }
 };
-
 
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {

@@ -12,25 +12,25 @@
 // LINKS
 //=================
 a {
-    color: $color-orange-03;
+  color: $color-orange-03;
+  text-decoration: none;
+
+  img {
+    border: none 0px $color-mono-01;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-blue-01;
     text-decoration: none;
-
-    img {
-        border: none 0px $color-mono-01;
-    }
-
-    &:hover,
-    &:focus {
-        color: $color-blue-01;
-        text-decoration: none;
-    }
+  }
 }
 
 //=================
 // IMAGES
 //=================
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 //=================
@@ -38,14 +38,14 @@ img {
 //=================
 ul,
 li {
-    color: $color-mono-09;
+  color: $color-mono-09;
 }
 
 //=================
 // MAIN
 //=================
 .body {
-    background-color: $color-mono-02;
+  background-color: $color-mono-02;
 }
 
 
@@ -61,12 +61,12 @@ li {
 // Info:  Header bar styling
 //=================
 .container__header {
-    background-color: $color-blue-04;
-    justify-content: center;
+  background-color: $color-blue-04;
+  justify-content: center;
 
-    a {
-        color: $color-mono-01;
-    }
+  a {
+    color: $color-mono-01;
+  }
 }
 
 //=================
@@ -76,25 +76,25 @@ li {
 // Info:  Breadcrumb styling
 //=================
 .container__breadcrumb {
-    background-color: $color-mono-05;
+  background-color: $color-mono-05;
 
-    li {
-        display: inline;
+  li {
+    display: inline;
 
-        &+li:before {
-            color: $color-mono-10;
-            content: "/ ";
-        }
-
-        a {
-            color: $color-blue-02;
-        }
-
-        a:hover {
-            color: $color-blue-03;
-            text-decoration: underline;
-        }
+    & + li:before {
+      color: $color-mono-10;
+      content: "/ ";
     }
+
+    a {
+      color: $color-blue-02;
+    }
+
+    a:hover {
+      color: $color-blue-03;
+      text-decoration: underline;
+    }
+  }
 }
 
 //=================
@@ -104,17 +104,17 @@ li {
 // Info:  Restaurant list filter styles
 //=================
 .container__filter {
-    background-color: $color-blue-01;
+  background-color: $color-blue-01;
 
-    h2 {
-        color: $color-mono-01;
-    }
+  h2 {
+    color: $color-mono-01;
+  }
 
-    select {
-        background-color: $color-mono-01;
-        border: 1px solid $color-mono-01;
-        border-radius: 2px;
-    }
+  select {
+    background-color: $color-mono-01;
+    border: 1px solid $color-mono-01;
+    border-radius: 2px;
+  }
 }
 
 //=================
@@ -124,32 +124,32 @@ li {
 // Info:  Styles for list of restaurants
 //=================
 .container__list {
-    background-color: $color-mono-03;
+  background-color: $color-mono-03;
 
-    li {
-        background-color: $color-mono-01;
-        border-radius: 0.3rem;
-        text-align: left;
-        transition: 0.2s;
+  li {
+    background-color: $color-mono-01;
+    border-radius: 0.3rem;
+    text-align: left;
+    transition: 0.2s;
 
-        h3 {
-            color: $color-orange-03;
-            font-weight: 300;
-            text-transform: uppercase;
-        }
-
-        a {
-            background-color: $color-orange-01;
-            color: $color-mono-01;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        &:hover {
-            box-shadow: 0 0.2rem 0.8rem 0.06rem $color-mono-06;
-            transform: translate(0, -1px);
-        }
+    h3 {
+      color: $color-orange-03;
+      font-weight: 300;
+      text-transform: uppercase;
     }
+
+    a {
+      background-color: $color-orange-01;
+      color: $color-mono-01;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      box-shadow: 0 0.2rem 0.8rem 0.06rem $color-mono-06;
+      transform: translate(0, -1px);
+    }
+  }
 }
 
 //=================
@@ -159,7 +159,7 @@ li {
 // Info:  Padding for info panel that contains restaurant info and reviews
 //=================
 .container__info {
-    background-color: $color-mono-03;
+  background-color: $color-mono-03;
 }
 
 //=================
@@ -169,34 +169,34 @@ li {
 // Info:  Styling for restaurant listing
 //=================
 .container__restaurant {
-    .name {
-        color: $color-orange-03;
-    }
+  .name {
+    color: $color-orange-03;
+  }
 
-    .restaurant-img {
-        border-radius: 1.2rem 0 0;
-    }
+  .restaurant-img {
+    border-radius: 1.2rem 0 0;
+  }
 
-    .cuisine {
-        background-color: $color-mono-09;
-        border-radius: 0 0 1.2rem;
-        color: $color-mono-02;
-        font-size: 12pt;
-        font-weight: 300;
-        letter-spacing: 0.8rem;
-        text-align: center;
-        text-transform: uppercase;
-    }
+  .cuisine {
+    background-color: $color-mono-09;
+    border-radius: 0 0 1.2rem;
+    color: $color-mono-02;
+    font-size: 12pt;
+    font-weight: 300;
+    letter-spacing: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
-    .address {
-        font-size: 12pt;
-    }
+  .address {
+    font-size: 12pt;
+  }
 
-    .hours {
-        td {
-            color: $color-mono-07;
-        }
+  .hours {
+    td {
+      color: $color-mono-07;
     }
+  }
 }
 
 //=================
@@ -206,31 +206,31 @@ li {
 // Info:  Styling for restaurant reviews
 //=================
 .container__reviews {
-    li {
-        background-color: $color-mono-02;
-        border-radius: 1.2rem 0 1.2rem 0;
-        box-shadow: 0 0.2rem 0.8rem 0.06rem $color-mono-05;
+  li {
+    background-color: $color-mono-02;
+    border-radius: 1.2rem 0 1.2rem 0;
+    box-shadow: 0 0.2rem 0.8rem 0.06rem $color-mono-05;
 
-        div:first-of-type {
-            background-color: $color-mono-09;
-            border-radius: 1.2rem 0 0;
-            color: $color-mono-02;
+    div:first-of-type {
+      background-color: $color-mono-09;
+      border-radius: 1.2rem 0 0;
+      color: $color-mono-02;
 
-            .review__name {
-                font-size: 12pt;
-            }
+      .review__name {
+        font-size: 12pt;
+      }
 
-            .review__date {
-                color: $color-mono-05;
-            }
-        }
-
-        h4 {
-            background-color: $color-orange-02;
-            color: $color-mono-02;
-            font-weight: 500;
-        }
+      .review__date {
+        color: $color-mono-05;
+      }
     }
+
+    h4 {
+      background-color: $color-orange-02;
+      color: $color-mono-02;
+      font-weight: 500;
+    }
+  }
 }
 
 //=================
@@ -240,9 +240,9 @@ li {
 // Info:  Styling for footer
 //=================
 .container__footer {
-    background-color: $color-blue-04;
-    color: $color-mono-05;
-    justify-content: center;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
+  background-color: $color-blue-04;
+  color: $color-mono-05;
+  justify-content: center;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
