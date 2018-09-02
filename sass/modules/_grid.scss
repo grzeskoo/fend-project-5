@@ -261,7 +261,11 @@ body {
       /* Info panel will scroll */
       order: 2;
       flex: 1;
-      overflow: auto;
+      // overflow: hidden;
+
+      &:hover {
+        // overflow-y: auto;
+      }
 
       section {
         /* Prevent info panel items from overlapping */
