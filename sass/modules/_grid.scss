@@ -109,6 +109,7 @@ body {
 //=================
 .container__list {
     @include flex("row", "wrap");
+    justify-items: center;
 
     >li {
         @include flex("column", "nowrap");
@@ -235,12 +236,21 @@ body {
 //=================
 @media (min-width: 60rem) {
     body.restaurant {
+        /* Fit window height to prevent map from being too tall */
         max-height: 100vh;
     }
 
+    .container__list {
+        justify-content: space-around;
+    }
+
     .container__list>li {
-        /* Five restaurants per row */
+        /**
+         * Five restaurants per row
+         * Don't stretch wider than max image width
+        */
         flex: 1 1 15%;
+        max-width: max-content;
     }
 
     .container__content {
@@ -248,12 +258,13 @@ body {
         flex-flow: row wrap;
 
         .container__info {
-            /* Side panel will scroll */
+            /* Info panel will scroll */
             order: 2;
             flex: 1;
             overflow: auto;
 
             section {
+                /* Prevent info panel items from overlapping */
                 flex-shrink: 0;
             }
         }

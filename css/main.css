@@ -71,6 +71,7 @@ body.restaurant {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  justify-items: center;
 }
 
 .container__list > li {
@@ -229,13 +230,24 @@ body.restaurant {
 
 @media (min-width: 60rem) {
   body.restaurant {
+    /* Fit window height to prevent map from being too tall */
     max-height: 100vh;
   }
+  .container__list {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   .container__list > li {
-    /* Five restaurants per row */
+    /**
+         * Five restaurants per row
+         * Don't stretch wider than max image width
+        */
     -webkit-box-flex: 1;
         -ms-flex: 1 1 15%;
             flex: 1 1 15%;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
   }
   .container__content {
     /* Switch info panel/map to be side-by-side */
@@ -245,7 +257,7 @@ body.restaurant {
             flex-flow: row wrap;
   }
   .container__content .container__info {
-    /* Side panel will scroll */
+    /* Info panel will scroll */
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -255,6 +267,7 @@ body.restaurant {
     overflow: auto;
   }
   .container__content .container__info section {
+    /* Prevent info panel items from overlapping */
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -434,6 +447,7 @@ table {
 
 .container__list {
   padding: 0.6rem;
+  margin: auto;
 }
 
 .container__list li {
