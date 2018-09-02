@@ -7,10 +7,10 @@
 let cacheName = 'v1.0';
 
 // Things to cache
-const cacheItems = [
+let cacheItems = [
     '/',
     '/index.html',
-    '/css/master.css',
+    '/css/main.css',
     '/data/restaurants.json',
     '/img/1.jpg',
     '/img/2.jpg',
@@ -48,7 +48,7 @@ self.addEventListener('install', e => {
 // Retrieve cache
 //=================
 self.addEventListener('fetch', e => {
-    // console.log('ServiceWorker is fetching content...');
+    console.log('ServiceWorker is fetching content...');
     e.respondWith(
         caches.match(e.request)
         .then(response => {
@@ -57,16 +57,7 @@ self.addEventListener('fetch', e => {
                 console.log('ServiceWorker found content in cache. Url: ', response.url);
                 return response;
             }
-
-            let fetchRequest = e.request.clone();
-
-            return fetch(fetchRequest)
-                .then(response => {
-                    //  Check if we received a valid response
-                    if (!response || response.status !== 200 || response.type !== 'basic') {
-                        return response;
-                    }
-                })
+            return fetch(e.request);
         })
         .catch(err => {
             console.log('Error while fetching data. Error: ', err);
