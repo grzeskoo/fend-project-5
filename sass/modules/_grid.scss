@@ -1,0 +1,272 @@
+//=========================================================
+// _grid.scss
+//
+// Info:  Flexbox, wrapping, and alignment for containers
+//=========================================================
+
+//=====================================
+// SASS
+//=====================================
+
+//=================
+// MIXINS
+//
+// Info:  Determine flexbox layout
+//=================
+@mixin flex($direction, $wrap) {
+    display: flex;
+
+    @if $direction=="row" {
+        flex-direction: row;
+    }
+
+    @else if $direction=="column" {
+        flex-direction: column;
+    }
+
+    @if $wrap=="wrap" {
+        flex-wrap: wrap;
+    }
+
+    @else if $wrap=="nowrap" {
+        flex-wrap: nowrap;
+    }
+}
+
+
+//=====================================
+// Global
+//=====================================
+
+//=================
+// BODY
+//
+// Info:  Page sizing and layout
+//=================
+body {
+    width: 100%;
+
+    &.restaurant {
+        /* Layout for restaurant.html */
+        @include flex("column", "nowrap");
+    }
+}
+
+
+
+//=====================================
+// Sections
+//=====================================
+
+//=================
+// HEADER
+//
+// File:  *.html
+// Info:  Header bar layout
+//=================
+.container__header {
+    @include flex("row", "nowrap");
+    align-items: center;
+    flex: none;
+}
+
+//=================
+// MAP
+//
+// File:  *.html
+// Info:  Wrapper for map
+//=================
+/* Map sizing; changes above small items */
+.container__map {
+    .map {
+        height: 400px;
+        width: 100%;
+    }
+}
+
+//=================
+// FILTERS
+//
+// File:  index.html
+// Info:  Wrapping for restaurant list filters
+//=================
+.container__filter {
+    /* Grow/shrink filters with device */
+    align-items: center;
+    @include flex("row", "nowrap");
+
+    >select {
+        /* Don't span to fit the container */
+        flex-basis: 20%;
+    }
+}
+
+//=================
+// LIST
+//
+// File:  index.html
+// Info:  Wrapping for list of restaurants
+//=================
+.container__list {
+    @include flex("row", "wrap");
+
+    >li {
+        @include flex("column", "nowrap");
+    }
+}
+
+//=================
+// CONTENT
+//
+// File:  restaurant.html
+// Info:  Wrapper for info panel and map
+//=================
+.container__content {
+    @include flex("column", "nowrap");
+
+    .container__breadcrumb {
+        /* Keep breadcrumb on top */
+        order: 1;
+    }
+
+    .container__map {
+        /* Put map before info in small layout */
+        align-self: stretch;
+        order: 2;
+    }
+
+    .container__info {
+        /* Info panel after map in small layout */
+        align-self: stretch;
+        order: 3;
+    }
+}
+
+//=================
+// INFORMATION
+//
+// File:  restaurant.html
+// Info:  Wrapper for inside info panel
+//=================
+.container__info {
+    @include flex("column", "nowrap");
+    overflow: auto;
+}
+
+//=================
+// RESTAURANT
+//
+// File:  restaurant.html
+// Info:  Wrapping for restaurant listing
+//=================
+.container__restaurant {
+    @include flex("column", "nowrap");
+}
+
+//=================
+// REVIEWS
+//
+// File:  restaurant.html
+// Info:  Wrapping for restaurant reviews
+//=================
+.container__reviews {
+    @include flex("column", "nowrap");
+
+    li {
+        @include flex("column", "nowrap");
+
+        div:first-of-type {
+            @include flex("row", "nowrap");
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+//=================
+// FOOTER
+//
+// File:  *.html
+// Info:  Wrapping for footer
+//=================
+.container__footer {
+    @include flex("row", "wrap");
+    align-items: center;
+    flex: none;
+}
+
+
+
+//=====================================
+// Media
+//=====================================
+
+//=================
+// SMALL
+//
+// Size:  640px
+// Info:  Small devices
+//=================
+@media (min-width: 40rem) {
+    .container__list>li {
+        /* Two restaurants per row */
+        flex: 1 0 40%;
+    }
+}
+
+//=================
+// MEDIUM
+//
+// Size:  800px
+// Info:  Medium devices
+//=================
+@media (min-width: 50rem) {
+    .container__list>li {
+        /* Three restaurants per row */
+        flex: 1 1 25%;
+    }
+}
+
+//=================
+// LARGE
+//
+// Size:  960px
+// Info:  Large devices
+//=================
+@media (min-width: 60rem) {
+    body.restaurant {
+        max-height: 100vh;
+    }
+
+    .container__list>li {
+        /* Five restaurants per row */
+        flex: 1 1 15%;
+    }
+
+    .container__content {
+        /* Switch info panel/map to be side-by-side */
+        flex-flow: row wrap;
+
+        .container__info {
+            /* Side panel will scroll */
+            order: 2;
+            flex: 1;
+            overflow: auto;
+
+            section {
+                flex-shrink: 0;
+            }
+        }
+
+        .container__map {
+            /* Reorder map in layout */
+            order: 3;
+            flex: 2;
+        }
+    }
+
+    .map.restaurants {
+        /* Map will fit parent height now that layout has changed */
+        height: 100%;
+    }
+}

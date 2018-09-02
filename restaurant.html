@@ -4,25 +4,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/master.css" type="text/css">
-  <!-- <link rel="stylesheet" href="css/master-old.css" type="text/css"> -->
+  <link rel="stylesheet" href="css/main.css" type="text/css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
   <title>Restaurant Info</title>
 </head>
 
-<body class="container body">
-  <!-- <div class="container wrap"> -->
+<body class="restaurant">
 
   <!-- Header -->
-  <header class="container__header">
+  <header class="container__header" role="banner">
     <h1 class="title__text">
         <a href="/">Restaurant Reviews</a>
       </h1>
   </header>
 
   <!-- Breadcrumb -->
-  <section class="container__breadcrumb breadcrumb__section">
-    <ul class="breadcrumb" id="breadcrumb">
+  <section class="container__breadcrumb">
+    <ul id="breadcrumb" aria-label="Breadcrumb">
       <li>
         <a href="/">Home</a>
       </li>
@@ -30,14 +28,14 @@
   </section>
 
   <!-- Main Content -->
-  <div class="container__content">
-
+  <main class="container__content" role="main">
     <!-- Restaurant Info -->
     <section class="container__info">
+
       <!-- Restaurant details -->
       <section class="container__restaurant" id="restaurant-container">
         <h2 class="name" id="restaurant-name"></h2>
-        <img class="img" id="restaurant-img">
+        <img class="lazyload" id="restaurant-img" alt="Restaurant image">
         <p class="cuisine" id="restaurant-cuisine"></p>
         <p class="address" id="restaurant-address"></p>
         <table class="hours" id="restaurant-hours"></table>
@@ -51,27 +49,26 @@
 
     <!-- Map -->
     <section class="container__map restaurants">
-      <div class="map restaurants" id="map"></div>
+      <div class="map restaurants lazyload" id="map" aria-label="Map"></div>
     </section>
-  </div>
+  </main>
 
   <!-- Footer -->
-  <footer class="container__footer" id="footer">
-    Copyright (c) 2017
-    <a href="/">
-        <strong>Restaurant Reviews</strong>
-      </a> All Rights Reserved.
+  <footer class="container__footer" id="footer" role="contentinfo">
+    <span>Copyright &copy; 2017 </span>
+    <span>
+      <a href="/">
+          <strong>Restaurant Reviews</strong>
+      </a>
+    </span>
+    <span> All Rights Reserved.</span>
   </footer>
-  <!-- </div> -->
 
-
-
-
-
-
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-  <script type="text/javascript" src="js/dbhelper.js"></script>
-  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <!-- Scripts -->
+  <script defer src="js/dbhelper.js"></script>
+  <script defer src="js/restaurant_info.js"></script>
+  <script src="js/lazysizes.min.js" async=""></script>
+  <script defer src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 
 </body>
 

@@ -1,0 +1,152 @@
+//=========================================================
+// _spacing.scss
+//
+// Info:  Size and spacing for all items
+//=========================================================
+
+//=================
+// HEADER
+//
+// File:  *.html
+// Info:  Header bar spacing
+//=================
+.container__header {
+    height: 5rem;
+}
+
+//=================
+// BREADCRUMB
+//
+// File:  *.html
+// Info:  Breadcrumb spacing
+//=================
+.container__breadcrumb {
+    padding: 1em 0 1em 1em;
+
+    li+li:before {
+        padding: 0.6rem;
+    }
+}
+
+//=================
+// FILTERS
+//
+// File:  index.html
+// Info:  Restaurant list filter spacing
+//=================
+.container__filter {
+    select {
+        height: 1.6rem;
+        margin: 0.6rem 0 0.6rem 0.6rem;
+        padding: 0.06rem 0.4rem;
+    }
+}
+
+//=================
+// INFORMATION
+//
+// File:  *.html
+// Info:  Information panel spacing
+//=================
+.container__info {
+    padding: 0 2rem;
+}
+
+//=================
+// LIST
+//
+// File:  index.html
+// Info:  Spacing for list of restaurants
+//=================
+.container__list {
+    padding: 0.6rem;
+
+    li {
+        margin: 0.6rem;
+        padding: 0.6rem;
+
+        h3 {
+            margin: 1rem 0 0.6rem;
+        }
+
+        p:first-of-type {
+            margin-top: auto;
+        }
+
+        p:last-of-type {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            padding: 0.6rem 1.8rem;
+        }
+    }
+}
+
+//=================
+// RESTAURANT
+//
+// File:  restaurant.html
+// Info:  Spacing for restaurant listing
+//=================
+.container__restaurant {
+    .name {
+        padding: 1.2rem 0;
+    }
+
+    .cuisine {
+        padding: 0.4rem 0;
+    }
+
+    tr>td:last-of-type {
+        padding: 0 0 0.2rem 1rem;
+    }
+
+    .address {
+        padding: 0.8rem 0;
+    }
+}
+
+//=================
+// REVIEWS
+//
+// File:  restaurant.html
+// Info:  Spacing for restaurant reviews
+//=================
+.container__reviews {
+    h2 {
+        padding: 2rem 0 1.2rem;
+    }
+
+    li {
+        margin-bottom: 2rem;
+
+        >* {
+            padding: 1rem;
+        }
+
+        h4 {
+            display: inline;
+            padding: 0.4rem;
+            border-radius: 0.2rem;
+        }
+
+        .review__comments {
+            margin-top: 0.8rem;
+        }
+    }
+}
+
+//=================
+// FOOTER
+//
+// File:  *.html
+// Info:  Spacing for footer
+//=================
+.container__footer {
+    height: 4rem;
+
+    >span {
+        margin: 0 0.2rem;
+    }
+}

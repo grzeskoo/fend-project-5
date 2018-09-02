@@ -1,0 +1,71 @@
+//=========================================================
+// _type.scss
+//
+// Info:  Base font settings
+//=========================================================
+
+//=====================================
+// Global
+//=====================================
+
+//=================
+// BASE
+//
+// Info:  Base font settings
+//=================
+body {
+  font: 10pt/1.4 Roboto, sans-serif;
+}
+
+//=================
+// HEADINGS
+//
+// Info:  Global h* styles
+//=================
+h1,
+h2 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1rem;
+  letter-spacing: 0.6rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+
+
+//=====================================
+// Media
+//=====================================
+
+//=================
+// SMALL
+//
+// Size:  640px
+// Info:  Small devices
+//=================
+@media (min-width: 40rem) {
+  h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}
