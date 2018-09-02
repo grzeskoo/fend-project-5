@@ -579,7 +579,7 @@ li {
 
 .container__breadcrumb li a:hover {
   color: #01447e;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .container__filter {
