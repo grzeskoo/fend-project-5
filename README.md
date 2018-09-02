@@ -140,6 +140,7 @@ I ultimately ended up putting gigantic colored borders around my page components
 
 * **Focus on structure first, then style**.  I spent way too much time tweaking the colors and effects when the layout was still broken.
 * **Keep it simple**.  I already mentioned it, but I tried doing too much at once and overwhelmed myself on more than one occasion.  Sass is crazy powerful.
+* **Commit and branch more often**. I'm still new to version control, so it's been a process getting myself used to its nuances.  I think my biggest issue is forgetting about it in general, so my commits for this project might be a bit sporadic (but I'm getting better!).
 * **Scrollbars are hard to style**. Seriously, why does it have to be so painful?
 
 ## Using Locally
