@@ -69,3 +69,23 @@ h3 {
     font-size: 1.1rem;
   }
 }
+
+//=================
+// LARGE
+//
+// Size:  960px
+// Info:  Large devices
+//=================
+@media (min-width: 60rem) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}

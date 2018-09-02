@@ -14,6 +14,7 @@
 a {
   color: $color-orange-03;
   text-decoration: none;
+  transition: all 0.2s;
 
   img {
     border: none 0rem $color-mono-01;
@@ -66,6 +67,10 @@ li {
 
   a {
     color: $color-mono-01;
+
+    &:hover {
+      color: $color-orange-02;
+    }
   }
 }
 

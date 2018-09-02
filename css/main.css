@@ -519,6 +519,8 @@ table {
 a {
   color: #f18200;
   text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 a img {
@@ -552,6 +554,10 @@ li {
 
 .container__header a {
   color: #ffffff;
+}
+
+.container__header a:hover {
+  color: #f58500;
 }
 
 .container__breadcrumb {
@@ -734,6 +740,18 @@ h3 {
   }
   h3 {
     font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
