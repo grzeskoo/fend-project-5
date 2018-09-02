@@ -199,16 +199,20 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 }
 
+/**
+ * Register service worker
+ * https://developers.google.com/web/fundamentals/primers/service-workers/
+ */
 registerServiceWorker = () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
     .then(reg => {
-      console.log('Registration successful. Scope: ' + reg.scope);
+      console.log('ServiceWorker registration successful. Scope: ' + reg.scope);
     }).catch(err => {
-      console.log('Registration failed with error: ', err);
+      console.log('ServiceWorker registration failed. Error: ', err);
     });
   } else {
-    console.log('Service Worker not detected in this browser.');
+    console.log('ServiceWorker not detected in this browser.');
   }
 };
 
