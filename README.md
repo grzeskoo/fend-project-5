@@ -3,7 +3,7 @@
 _Three Stage Course Material Project - Restaurant Reviews_
 
 ## Contents
----
+
 - [Mobile Web Specialist Certification Course](#mobile-web-specialist-certification-course)
   - [Contents](#contents)
   - [Introduction](#introduction)
@@ -31,11 +31,11 @@ _Three Stage Course Material Project - Restaurant Reviews_
   - [Note about ES6](#note-about-es6)
 
 ## Introduction
----
+
 The **Restaurant Reviews** project is split into several stages, of which this is the first.  The primary goal was to convert an existing webpage into a mobile-ready responsive web application ([see original rubric below](#project-overview-stage-1-original-rubric)).
 
 ## Dependencies
----
+
 The majority of the code was provided by [Udacity](https://github.com/udacity/mws-restaurant-stage-1), but I've added a few other external resources.
 
 ### CSS
@@ -53,7 +53,7 @@ The majority of the code was provided by [Udacity](https://github.com/udacity/mw
 * [Google Fonts](https://fonts.google.com/)
 
 ## Features
----
+
 These are the things I did well, so I'll brag about them first.
 
 ### Responsive
@@ -121,7 +121,7 @@ Original style was maintained, with some added effects for personality.
 * Employs a service worker using [Google's AppCache API](https://developers.google.com/web/fundamentals/primers/service-workers/) to cache site assets for offline access
 
 ## Sub-Optimal
----
+
 While the objectives were achieved, I recognize that in trying to apply all of the cool stuff I learned, a few parts are lacking and could use some attention.
 
 ### SASS
@@ -137,13 +137,13 @@ While I'm most familiar with Flexbox over the alternatives (**grid**, **floats**
 I ultimately ended up putting gigantic colored borders around my page components to visualize them (and starting from scratch more times than I can count), but I finally ended up with something I'm probably 70% proud of.
 
 ## Lessons Learned
----
+
 * **Focus on structure first, then style**.  I spent way too much time tweaking the colors and effects when the layout was still broken.
 * **Keep it simple**.  I already mentioned it, but I tried doing too much at once and overwhelmed myself on more than one occasion.  Sass is crazy powerful.
 * **Scrollbars are hard to style**. Seriously, why does it have to be so painful?
 
 ## Using Locally
----
+
 To see the magic in action, feel free to fork or clone your own copy.
 
 ### Requirements
@@ -163,7 +163,7 @@ python -m http.server 8000
 4. Have fun!
 
 ## Contributing
----
+
 If you've read this far then you know this was an assigned project, and as such will not be open to pull requests or contributions.
 
 I hope you can forgive me.
