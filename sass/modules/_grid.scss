@@ -245,10 +245,8 @@ body {
   }
 
   .container__list > li {
-    /**
-         * Five restaurants per row
-         * Don't stretch wider than max image width
-        */
+    /* Five restaurants per row */
+    /* Don't stretch wider than max image width */
     flex: 1 1 15%;
     max-width: max-content;
   }
@@ -278,5 +276,19 @@ body {
   .map.restaurants {
     /* Map will fit parent height now that layout has changed */
     height: 100%;
+  }
+}
+
+//=================
+// EXTRA LARGE
+//
+// Size:  2240px
+// Info:  Extra large devices
+//=================
+@media (min-width: 140rem) {
+  .container__list > li {
+    /* Strict five restaurants per row */
+    /* Don't stretch wider than max image width */
+    flex: 1 1 18%;
   }
 }

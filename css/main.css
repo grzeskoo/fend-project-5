@@ -238,10 +238,8 @@ body.restaurant {
         justify-content: space-around;
   }
   .container__list > li {
-    /**
-         * Five restaurants per row
-         * Don't stretch wider than max image width
-        */
+    /* Five restaurants per row */
+    /* Don't stretch wider than max image width */
     -webkit-box-flex: 1;
         -ms-flex: 1 1 15%;
             flex: 1 1 15%;
@@ -282,6 +280,16 @@ body.restaurant {
   .map.restaurants {
     /* Map will fit parent height now that layout has changed */
     height: 100%;
+  }
+}
+
+@media (min-width: 140rem) {
+  .container__list > li {
+    /* Strict five restaurants per row */
+    /* Don't stretch wider than max image width */
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 18%;
+            flex: 1 1 18%;
   }
 }
 
