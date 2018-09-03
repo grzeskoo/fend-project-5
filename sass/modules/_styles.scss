@@ -148,6 +148,10 @@ li {
       color: $color-mono-01;
       text-align: center;
       text-transform: uppercase;
+
+      &:hover {
+        background-color: $color-orange-03;
+      }
     }
 
     &:hover {

@@ -621,6 +621,10 @@ li {
   text-transform: uppercase;
 }
 
+.container__list li a:hover {
+  background-color: #f18200;
+}
+
 .container__list li:hover {
   -webkit-box-shadow: 0 0.2rem 0.8rem 0.06rem #aaaaaa;
           box-shadow: 0 0.2rem 0.8rem 0.06rem #aaaaaa;
