@@ -156,11 +156,12 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 /**
  * Create restaurant HTML.
  */
-createRestaurantHTML = (restaurant) => {
+createRestaurantHTML = (restaurant = self.restaurant) => {
   const li = document.createElement('li');
 
   const image = document.createElement('img');
   image.className = 'restaurant-img lazyload';
+  image.setAttribute('alt', 'Image of ' + restaurant.name + ' restaurant');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
