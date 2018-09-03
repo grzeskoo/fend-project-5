@@ -4,14 +4,19 @@
 // Variables
 //=================
 // Cache name
-let cacheName = 'v1.0';
+const CACHE_NAME = 'cache-rr-v1.0';
 
 // Things to cache
-let cacheItems = [
+const CACHE_ITEMS = [
   '/',
+  '/js/sw_register.js',
   '/index.html',
+  '/restaurant.html',
   '/css/main.css',
   '/data/restaurants.json',
+  '/js/dbhelper.js',
+  '/js/main.js',
+  '/js/restaurant_info.js',
   '/img/1.jpg',
   '/img/2.jpg',
   '/img/3.jpg',
@@ -22,44 +27,20 @@ let cacheItems = [
   '/img/8.jpg',
   '/img/9.jpg',
   '/img/10.jpg',
-  '/js/dbhelper.js',
-  '/js/main.js',
-  '/js/restaurant_info.js'
 ];
 
 //=================
 // Install serviceWorker
 //=================
 self.addEventListener('install', e => {
-  // console.log('ServiceWorker installation: Success');
   e.waitUntil(
-    caches.open(cacheName)
+    caches
+    .open(CACHE_NAME)
     .then(cache => {
-      // console.log('ServiceWorker opened cache');
-      return cache.addAll(cacheItems);
+      return cache.addAll(CACHE_ITEMS);
     })
     .catch(err => {
-      console.log('Error caching files.', err);
-    })
-  );
-});
-
-//=================
-// Retrieve cache
-//=================
-self.addEventListener('fetch', e => {
-  // console.log('ServiceWorker is fetching content...');
-  e.respondWith(
-    caches.match(e.request)
-    .then(response => {
-      if (response) {
-        // console.log('ServiceWorker found content in cache. Url: ', response.url);
-        return response;
-      }
-      return fetch(e.request);
-    })
-    .catch(err => {
-      console.log('Error fetching data.', err);
+      console.log(`Error caching files. ${err}`);
     })
   );
 });
@@ -68,19 +49,36 @@ self.addEventListener('fetch', e => {
 // Update serviceWorker
 //=================
 self.addEventListener('activate', e => {
-  // console.log('ServiceWorker activated');
   e.waitUntil(
     caches.keys()
     .then(cacheNames => {
       return Promise.all(cacheNames.map(name => {
-        if (cacheName !== name) {
-          console.log('ServiceWorker is removing old cache...');
-          return caches.delete(name);
-        }
+        if (CACHE_NAME !== name) return caches.delete(name);
       }));
     })
     .catch(err => {
       console.log('Error removing old cache.', err);
+    })
+  );
+});
+
+//=================
+// Retrieve cache
+//=================
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches
+    .match(e.request, {
+      // Ignores query string in URL
+      // https://developer.mozilla.org/en-US/docs/Web/API/Cache/match#Parameters
+      ignoreSearch: true
+    })
+    .then(response => {
+      if (response) return response;
+      return fetch(e.request);
+    })
+    .catch((err) => {
+      console.log(`Error fetching data. ${err}`);
     })
   );
 });

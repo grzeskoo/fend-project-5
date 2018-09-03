@@ -9,7 +9,7 @@ var markers = []
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
-  registerServiceWorker();
+  // registerServiceWorker();
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -26,7 +26,7 @@ fetchNeighborhoods = () => {
       fillNeighborhoodsHTML();
     }
   });
-}
+};
 
 /**
  * Set neighborhoods HTML.
@@ -39,7 +39,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     option.value = neighborhood;
     select.append(option);
   });
-}
+};
 
 /**
  * Fetch all cuisines and set their HTML.
@@ -53,7 +53,7 @@ fetchCuisines = () => {
       fillCuisinesHTML();
     }
   });
-}
+};
 
 /**
  * Set cuisines HTML.
@@ -67,7 +67,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     option.value = cuisine;
     select.append(option);
   });
-}
+};
 
 /**
  * Initialize leaflet map, called from HTML.
@@ -88,7 +88,7 @@ initMap = () => {
   }).addTo(newMap);
 
   updateRestaurants();
-}
+};
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
@@ -123,7 +123,7 @@ updateRestaurants = () => {
       fillRestaurantsHTML();
     }
   })
-}
+};
 
 /**
  * Clear current restaurants, their HTML and remove their map markers.
@@ -140,7 +140,7 @@ resetRestaurants = (restaurants) => {
   }
   self.markers = [];
   self.restaurants = restaurants;
-}
+};
 
 /**
  * Create all restaurants HTML and add them to the webpage.
@@ -151,7 +151,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
-}
+};
 
 /**
  * Create restaurant HTML.
@@ -180,10 +180,10 @@ createRestaurantHTML = (restaurant = self.restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  li.append(more);
 
-  return li
-}
+  return li;
+};
 
 /**
  * Add markers for current restaurants to the map.
@@ -199,24 +199,24 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     self.markers.push(marker);
   });
-}
+};
 
 /**
  * Register service worker
  * https://developers.google.com/web/fundamentals/primers/service-workers/
  */
-registerServiceWorker = () => {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => {
-        // console.log('ServiceWorker registration successful. Scope: ' + reg.scope);
-      }).catch(err => {
-        console.log('ServiceWorker registration failed. ', err);
-      });
-  } else {
-    console.log('ServiceWorker not detected in this browser.');
-  }
-};
+// registerServiceWorker = () => {
+//   if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('/sw.js')
+//       .then(reg => {
+//         console.log('ServiceWorker registration successful. Scope: ' + reg.scope);
+//       }).catch(err => {
+//         console.log('ServiceWorker registration failed. ', err);
+//       });
+//   } else {
+//     console.log('ServiceWorker not detected in this browser.');
+//   }
+// };
 
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {

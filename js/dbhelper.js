@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
-    return `http://localhost:${port}/data/restaurants.json`;
+    return './data/restaurants.json';
   }
 
   /**
@@ -23,7 +23,8 @@ class DBHelper {
         const json = JSON.parse(xhr.responseText);
         const restaurants = json.restaurants;
         callback(null, restaurants);
-      } else { // Oops!. Got an error from server.
+      }
+      else { // Oops!. Got an error from server.
         const error = (`Request failed. Returned status of ${xhr.status}`);
         callback(error, null);
       }
@@ -39,11 +40,13 @@ class DBHelper {
     DBHelper.fetchRestaurants((error, restaurants) => {
       if (error) {
         callback(error, null);
-      } else {
+      }
+      else {
         const restaurant = restaurants.find(r => r.id == id);
         if (restaurant) { // Got the restaurant
           callback(null, restaurant);
-        } else { // Restaurant does not exist in the database
+        }
+        else { // Restaurant does not exist in the database
           callback('Restaurant does not exist', null);
         }
       }
@@ -58,7 +61,8 @@ class DBHelper {
     DBHelper.fetchRestaurants((error, restaurants) => {
       if (error) {
         callback(error, null);
-      } else {
+      }
+      else {
         // Filter restaurants to have only given cuisine type
         const results = restaurants.filter(r => r.cuisine_type == cuisine);
         callback(null, results);
@@ -74,7 +78,8 @@ class DBHelper {
     DBHelper.fetchRestaurants((error, restaurants) => {
       if (error) {
         callback(error, null);
-      } else {
+      }
+      else {
         // Filter restaurants to have only given neighborhood
         const results = restaurants.filter(r => r.neighborhood == neighborhood);
         callback(null, results);
@@ -90,7 +95,8 @@ class DBHelper {
     DBHelper.fetchRestaurants((error, restaurants) => {
       if (error) {
         callback(error, null);
-      } else {
+      }
+      else {
         let results = restaurants
         if (cuisine != 'all') { // filter by cuisine
           results = results.filter(r => r.cuisine_type == cuisine);
@@ -111,7 +117,8 @@ class DBHelper {
     DBHelper.fetchRestaurants((error, restaurants) => {
       if (error) {
         callback(error, null);
-      } else {
+      }
+      else {
         // Get all neighborhoods from all restaurants
         const neighborhoods = restaurants.map((v, i) => restaurants[i].neighborhood)
         // Remove duplicates from neighborhoods
@@ -129,7 +136,8 @@ class DBHelper {
     DBHelper.fetchRestaurants((error, restaurants) => {
       if (error) {
         callback(error, null);
-      } else {
+      }
+      else {
         // Get all cuisines from all restaurants
         const cuisines = restaurants.map((v, i) => restaurants[i].cuisine_type)
         // Remove duplicates from cuisines
@@ -150,22 +158,22 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+    return (`./img/${restaurant.photograph}`);
   }
 
   /**
    * Map marker for a restaurant.
    */
-   static mapMarkerForRestaurant(restaurant, map) {
-    // https://leafletjs.com/reference-1.3.0.html#marker  
-    const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng],
-      {title: restaurant.name,
+  static mapMarkerForRestaurant(restaurant, map) {
+    // https://leafletjs.com/reference-1.3.0.html#marker
+    const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng], {
+      title: restaurant.name,
       alt: restaurant.name,
       url: DBHelper.urlForRestaurant(restaurant)
-      })
-      marker.addTo(newMap);
+    })
+    marker.addTo(newMap);
     return marker;
-  } 
+  }
   /* static mapMarkerForRestaurant(restaurant, map) {
     const marker = new google.maps.Marker({
       position: restaurant.latlng,
@@ -176,6 +184,4 @@ class DBHelper {
     );
     return marker;
   } */
-
 }
-
